@@ -1,0 +1,79 @@
+# Altara Energy Site
+# Jekyll configuration for GitHub Pages
+
+# Site settings
+title: Altara Energy
+description: "Premium EV charging network designed for scenic highway corridors and National Parks routes. Where charging becomes part of your journey."
+url: "https://altara.energy"
+baseurl: ""
+
+# Organization info
+organization:
+  name: Altara Energy
+  tagline: "Where charging becomes part of your journey"
+  email: hello@altara.energy
+  phone: "(650) 420-6300"
+  phone_raw: "6504206300"
+  address:
+    street: "2661 Market Street STE 85787"
+    city: "San Francisco"
+    state: "CA"
+    zip: "94114"
+
+# Social media
+social:
+  twitter: "https://x.com/altaraenergy"
+  instagram: "https://instagram.com/altaraenergy"
+  linkedin: "https://linkedin.com/company/altaraenergy"
+  youtube: ""
+
+# Page metadata
+pages:
+  index:
+    title: "Altara Energy | Where charging becomes part of your journey"
+    description: "Premium EV charging designed for America's scenic highways. Climate-controlled indoor comfort at every location. Basecamp hubs and Waystation satellites across America's most beautiful routes."
+    keywords: "EV charging, electric vehicle charging, scenic route charging, National Parks EV charging, premium EV amenities, indoor EV charging"
+    og_image: "/images/hero-scenic-highway.jpg"
+  about:
+    title: "About Us | Altara Energy - Premium Scenic Corridor Charging"
+    description: "America's first premium EV charging network designed for scenic highway corridors and National Parks routes. Learn about our mission and vision."
+    keywords: "Altara Energy, premium EV charging, scenic corridor charging, EV hospitality"
+    og_image: "/images/about-hero.jpg"
+  locations:
+    title: "Our Locations | Altara Energy - Basecamps & Waystations"
+    description: "Explore our growing network of climate-controlled charging locations. Basecamp hubs with full amenities and automated Waystation satellites."
+    keywords: "Altara locations, premium charging stations, National Parks charging, scenic highway EV network"
+    og_image: "/images/locations-hero.jpg"
+  membership:
+    title: "Pathfinder Rewards | Altara Energy Membership Program"
+    description: "Join Pathfinder Rewards for exclusive benefits, predictable pricing, and premium amenities. From Explorer (free) to Trailblazer tier."
+    keywords: "Pathfinder Rewards, EV membership, charging discounts, premium EV benefits"
+    og_image: "/images/membership-hero.jpg"
+  contact:
+    title: "Contact Us | Altara Energy"
+    description: "Get in touch with Altara Energy. Whether you're an investor, partner, or EV traveler, we'd love to hear from you."
+    keywords: "contact Altara Energy, EV charging inquiries, investment opportunities"
+    og_image: "/images/contact-hero.jpg"
+
+# Analytics
+analytics:
+  tinylytics_id: "9_N5xEnQSTdibXFSDoqf"
+  enabled: true
+
+# Asset versioning
+asset_version: "1.0.0"
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+  - vendor
+  - .bundle

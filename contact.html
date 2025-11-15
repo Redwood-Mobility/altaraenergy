@@ -1,0 +1,229 @@
+---
+layout: default
+title: "Contact Us | Altara Energy"
+description: "Get in touch with Altara Energy. Whether you're an investor, partner, or EV traveler, we'd love to hear from you."
+keywords: "contact Altara Energy, EV charging inquiries, investment opportunities"
+og_image: "/images/contact-hero.jpg"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 40vh; background: linear-gradient(135deg, var(--ocean-deep) 0%, #0A5A85 100%); display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 60px 40px;">
+    <div class="container">
+        <div class="hero-content" style="max-width: 800px; margin: 0 auto;">
+            <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 16px; color: white;">
+                Get in Touch
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.95; color: white;">
+                We'd love to hear from you
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-section" style="padding: 80px 40px; background: var(--bg-primary);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: start;">
+
+            <!-- Left Column: Contact Form -->
+            <div class="contact-form-wrapper" style="max-width: 600px;">
+                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+
+                    <!-- Name Field -->
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="name" style="display: block; font-size: 0.95rem; color: var(--charcoal); font-weight: 600; margin-bottom: 8px;">
+                            Name <span style="color: var(--sunset-coral);">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Your name"
+                            style="width: 100%; border: 1px solid #E6E6E6; border-radius: 4px; padding: 12px 16px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s ease;"
+                            onfocus="this.style.borderColor='var(--ocean-deep)'"
+                            onblur="this.style.borderColor='#E6E6E6'"
+                        >
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="email" style="display: block; font-size: 0.95rem; color: var(--charcoal); font-weight: 600; margin-bottom: 8px;">
+                            Email <span style="color: var(--sunset-coral);">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="your@email.com"
+                            style="width: 100%; border: 1px solid #E6E6E6; border-radius: 4px; padding: 12px 16px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s ease;"
+                            onfocus="this.style.borderColor='var(--ocean-deep)'"
+                            onblur="this.style.borderColor='#E6E6E6'"
+                        >
+                    </div>
+
+                    <!-- Subject Field -->
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="subject" style="display: block; font-size: 0.95rem; color: var(--charcoal); font-weight: 600; margin-bottom: 8px;">
+                            Subject <span style="color: var(--sunset-coral);">*</span>
+                        </label>
+                        <select
+                            id="subject"
+                            name="subject"
+                            required
+                            style="width: 100%; border: 1px solid #E6E6E6; border-radius: 4px; padding: 12px 16px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s ease; background: white; cursor: pointer;"
+                            onfocus="this.style.borderColor='var(--ocean-deep)'"
+                            onblur="this.style.borderColor='#E6E6E6'"
+                        >
+                            <option value="">Select a subject...</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Membership Question">Membership Question</option>
+                            <option value="Site Host Partnership">Site Host Partnership</option>
+                            <option value="Press Inquiry">Press Inquiry</option>
+                            <option value="Investment Opportunity">Investment Opportunity</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label for="message" style="display: block; font-size: 0.95rem; color: var(--charcoal); font-weight: 600; margin-bottom: 8px;">
+                            Message <span style="color: var(--sunset-coral);">*</span>
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows="6"
+                            placeholder="Tell us more..."
+                            style="width: 100%; border: 1px solid #E6E6E6; border-radius: 4px; padding: 12px 16px; font-size: 1rem; font-family: inherit; resize: vertical; transition: border-color 0.3s ease;"
+                            onfocus="this.style.borderColor='var(--ocean-deep)'"
+                            onblur="this.style.borderColor='#E6E6E6'"
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="submit-button"
+                        style="width: 100%; background: var(--sunset-coral); color: white; padding: 16px; border-radius: 4px; font-weight: 600; font-size: 1.05rem; border: none; cursor: pointer; transition: background 0.3s ease;"
+                        onmouseover="this.style.background='#e85a3a'"
+                        onmouseout="this.style.background='var(--sunset-coral)'"
+                    >
+                        Send Message
+                    </button>
+
+                    <!-- Response Note -->
+                    <p style="font-size: 0.9rem; color: var(--fog); margin-top: 16px; text-align: center;">
+                        We'll respond within 24 hours during business days.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Right Column: Contact Information -->
+            <div class="contact-info-wrapper">
+                <div class="contact-info-card" style="background: var(--bg-light); padding: 40px; border-radius: 8px; position: sticky; top: 100px;">
+
+                    <h3 style="font-size: 1.5rem; color: var(--ocean-deep); margin-bottom: 32px; font-weight: 600;">
+                        Contact Information
+                    </h3>
+
+                    <!-- Email -->
+                    <div class="contact-item" style="margin-bottom: 24px;">
+                        <p style="font-size: 0.85rem; color: var(--fog); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
+                            Email
+                        </p>
+                        <a href="mailto:{{ site.organization.email }}" style="font-size: 1.1rem; color: var(--ocean-deep); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--sunset-coral)'" onmouseout="this.style.color='var(--ocean-deep)'">
+                            {{ site.organization.email }}
+                        </a>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="contact-item" style="margin-bottom: 24px;">
+                        <p style="font-size: 0.85rem; color: var(--fog); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
+                            Phone
+                        </p>
+                        <a href="tel:{{ site.organization.phone_raw }}" style="font-size: 1.1rem; color: var(--ocean-deep); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--sunset-coral)'" onmouseout="this.style.color='var(--ocean-deep)'">
+                            {{ site.organization.phone }}
+                        </a>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="contact-item" style="margin-bottom: 32px;">
+                        <p style="font-size: 0.85rem; color: var(--fog); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
+                            Headquarters
+                        </p>
+                        <address style="font-size: 1rem; color: var(--charcoal); line-height: 1.6; font-style: normal;">
+                            Altara Energy<br>
+                            {{ site.organization.address.street }}<br>
+                            {{ site.organization.address.city }}, {{ site.organization.address.state }} {{ site.organization.address.zip }}
+                        </address>
+                    </div>
+
+                    <!-- Divider -->
+                    <div style="height: 1px; background: #E6E6E6; margin: 32px 0;"></div>
+
+                    <!-- Support Note -->
+                    <div class="support-note" style="margin-bottom: 32px;">
+                        <p style="font-weight: 600; font-size: 0.95rem; color: var(--charcoal); margin-bottom: 8px;">
+                            For Immediate Support:
+                        </p>
+                        <p style="font-size: 0.95rem; color: var(--fog); line-height: 1.6;">
+                            Pathfinder Rewards members can access support through the mobile app for faster assistance.
+                        </p>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <p style="font-size: 0.85rem; color: var(--fog); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; font-weight: 600;">
+                            Follow Us
+                        </p>
+                        <div style="display: flex; gap: 16px; align-items: center;">
+                            {% if site.social.instagram %}
+                            <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" style="color: var(--ocean-deep); font-size: 32px; transition: color 0.3s ease;" onmouseover="this.style.color='var(--sunset-coral)'" onmouseout="this.style.color='var(--ocean-deep)'" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            {% endif %}
+                            {% if site.social.linkedin %}
+                            <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" style="color: var(--ocean-deep); font-size: 32px; transition: color 0.3s ease;" onmouseover="this.style.color='var(--sunset-coral)'" onmouseout="this.style.color='var(--ocean-deep)'" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            {% endif %}
+                            {% if site.social.twitter %}
+                            <a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer" style="color: var(--ocean-deep); font-size: 32px; transition: color 0.3s ease;" onmouseover="this.style.color='var(--sunset-coral)'" onmouseout="this.style.color='var(--ocean-deep)'" aria-label="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Become a Host Section -->
+<section id="become-host" class="become-host" style="background: linear-gradient(135deg, var(--ocean-deep) 0%, #0A5A85 100%); padding: 80px 40px; text-align: center; color: white;">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+
+        <h2 style="font-size: 2.2rem; font-weight: 300; margin-bottom: 24px; color: white;">
+            Own Scenic Property Along a Major Corridor?
+        </h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8; opacity: 0.95; margin-bottom: 40px; color: white;">
+            Altara partners with landowners on or near America's most beautiful routes. If you own property with highway access on a scenic corridor or near National Parks, let's discuss bringing premium charging to your location.
+        </p>
+
+        <a href="#"
+           onclick="document.getElementById('subject').value='Site Host Partnership'; window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+           class="btn-primary"
+           style="display: inline-block; background: var(--sunset-coral); color: white; padding: 16px 40px; border-radius: 4px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: background 0.3s ease;"
+           onmouseover="this.style.background='#e85a3a'"
+           onmouseout="this.style.background='var(--sunset-coral)'">
+            Partner With Us
+        </a>
+
+    </div>
+</section>

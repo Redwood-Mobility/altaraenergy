@@ -1,0 +1,57 @@
+<!-- Altara Energy Footer - Ocean Deep Background -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Column 1: Company -->
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="{{ '/about.html' | relative_url }}">About</a>
+                <a href="{{ '/about.html#vision' | relative_url }}">Our Vision</a>
+                <a href="#" style="opacity: 0.5; cursor: not-allowed;">Careers</a>
+                <a href="#" style="opacity: 0.5; cursor: not-allowed;">Press Kit</a>
+            </div>
+
+            <!-- Column 2: Locations -->
+            <div class="footer-section">
+                <h4>Locations</h4>
+                <a href="{{ '/locations.html' | relative_url }}">Coming Soon</a>
+                <a href="{{ '/contact.html#become-host' | relative_url }}">Become a Host</a>
+                <a href="#" style="opacity: 0.5; cursor: not-allowed;">Route Planning</a>
+            </div>
+
+            <!-- Column 3: Membership -->
+            <div class="footer-section">
+                <h4>Membership</h4>
+                <a href="{{ '/membership.html' | relative_url }}">Pathfinder Rewards</a>
+                <a href="{{ '/membership.html#explorer' | relative_url }}">Explorer (Free)</a>
+                <a href="{{ '/membership.html#voyager' | relative_url }}">Voyager</a>
+                <a href="{{ '/membership.html#pioneer' | relative_url }}">Pioneer</a>
+                <a href="{{ '/membership.html#trailblazer' | relative_url }}">Trailblazer</a>
+            </div>
+
+            <!-- Column 4: Connect -->
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="{{ '/contact.html' | relative_url }}">Contact Us</a>
+                <a href="#" style="opacity: 0.5; cursor: not-allowed;">Support</a>
+                <div class="footer-social-icons" style="margin-top: 1rem;">
+                    <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X (Twitter)">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.organization.name }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- External JavaScript -->
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.asset_version }}"></script>
