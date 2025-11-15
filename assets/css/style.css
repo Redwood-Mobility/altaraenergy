@@ -1414,6 +1414,20 @@ p {
     .partnership-steps-grid {
         grid-template-columns: 1fr !important;
     }
+
+    /* Reduce padding on partners sections for mobile */
+    .partners-target-box {
+        padding: 24px 16px !important;
+    }
+
+    .partnership-works-section {
+        padding: 60px 20px !important;
+    }
+
+    /* Reduce gap on partnership steps grid for mobile */
+    .partnership-steps-grid {
+        gap: 2rem !important;
+    }
 }
 
 /* Tablet breakpoint - 2 columns */
