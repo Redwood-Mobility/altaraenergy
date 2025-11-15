@@ -1402,11 +1402,22 @@ p {
     .coming-soon > .container > div {
         padding: 40px 20px !important;
     }
+
+    /* Reduce padding on membership benefits section for mobile */
+    .membership-benefits {
+        padding: 60px 20px !important;
+    }
+
+    /* Benefits grid - stack on mobile */
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 
-/* Tablet breakpoint for launching grid - 2 columns */
+/* Tablet breakpoint - 2 columns */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .launching-grid {
+    .launching-grid,
+    .benefits-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
