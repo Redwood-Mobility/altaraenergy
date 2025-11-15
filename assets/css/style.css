@@ -1397,6 +1397,11 @@ p {
     .launching-grid {
         grid-template-columns: 1fr !important;
     }
+
+    /* Reduce padding on launching section for mobile */
+    .coming-soon > .container > div {
+        padding: 40px 20px !important;
+    }
 }
 
 /* Tablet breakpoint for launching grid - 2 columns */
