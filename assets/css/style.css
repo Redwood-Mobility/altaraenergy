@@ -55,7 +55,7 @@ html {
     --shadow-heavy: rgba(0,0,0,0.16);
     --accent-color: #FF6B4A;
     --accent-hover: #e85a3a;
-    --nav-bg: #FFFFFF;
+    --nav-bg: #F8F9FA;
     --nav-text: #0A4B6E;
     --footer-bg: #0A4B6E;
     --footer-text: #FFFFFF;
@@ -78,7 +78,7 @@ html {
         --shadow-heavy: rgba(0,0,0,0.5);
         --accent-color: #FF6B4A;
         --accent-hover: #ff8a6a;
-        --nav-bg: #0f0f0f;
+        --nav-bg: #1a2332;
         --nav-text: #FFFFFF;
         --footer-bg: #0f0f0f;
         --footer-text: #FFFFFF;
