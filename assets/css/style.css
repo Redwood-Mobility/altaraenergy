@@ -244,7 +244,7 @@ section {
 /* ============================================
    Header & Navigation
    ============================================ */
-.header {
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -255,46 +255,44 @@ section {
   transition: all var(--transition-base);
 }
 
-.header.scrolled {
-  box-shadow: var(--shadow-md);
+.site-header .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
-.header-container {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: var(--header-height);
-  padding: 0 var(--container-padding);
-  max-width: var(--container-max-width);
-  margin: 0 auto;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-current-teal);
+.navbar-brand a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.logo img {
+.navbar-brand .logo {
   height: 40px;
   width: auto;
 }
 
-/* Navigation */
-.nav {
+/* Desktop Navigation */
+.navbar-menu {
   display: none;
 }
 
-.nav-list {
+.navbar-nav {
   display: flex;
   gap: var(--spacing-lg);
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-link {
+.navbar-nav li a {
   color: var(--color-slate);
   font-weight: var(--font-weight-medium);
   transition: color var(--transition-fast);
@@ -302,12 +300,12 @@ section {
   padding: 0.5rem 0;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.navbar-nav li a:hover,
+.navbar-nav li a.active {
   color: var(--color-current-teal);
 }
 
-.nav-link::after {
+.navbar-nav li a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -318,13 +316,13 @@ section {
   transition: width var(--transition-base);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
+.navbar-nav li a:hover::after,
+.navbar-nav li a.active::after {
   width: 100%;
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
+/* Hamburger Menu */
+.hamburger {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -337,7 +335,7 @@ section {
   z-index: 1001;
 }
 
-.menu-toggle span {
+.hamburger span {
   display: block;
   width: 100%;
   height: 3px;
@@ -346,56 +344,39 @@ section {
   transition: all var(--transition-base);
 }
 
-.menu-toggle.active span:nth-child(1) {
+.hamburger.active span:nth-child(1) {
   transform: translateY(9.5px) rotate(45deg);
 }
 
-.menu-toggle.active span:nth-child(2) {
+.hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 
-.menu-toggle.active span:nth-child(3) {
+.hamburger.active span:nth-child(3) {
   transform: translateY(-9.5px) rotate(-45deg);
 }
 
 /* Mobile Navigation */
-.mobile-nav {
+.navbar-menu.active {
+  display: block;
   position: fixed;
   top: var(--header-height);
   left: 0;
   width: 100%;
-  height: calc(100vh - var(--header-height));
   background-color: var(--color-white);
-  transform: translateX(-100%);
-  transition: transform var(--transition-base);
-  overflow-y: auto;
   box-shadow: var(--shadow-lg);
-}
-
-.mobile-nav.active {
-  transform: translateX(0);
-}
-
-.mobile-nav-list {
   padding: var(--spacing-lg);
-  display: flex;
+}
+
+.navbar-menu.active .navbar-nav {
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--spacing-sm);
 }
 
-.mobile-nav-link {
-  padding: var(--spacing-sm);
-  color: var(--color-slate);
-  font-weight: var(--font-weight-medium);
-  border-left: 3px solid transparent;
-  transition: all var(--transition-fast);
-}
-
-.mobile-nav-link:hover,
-.mobile-nav-link.active {
-  color: var(--color-current-teal);
-  border-left-color: var(--color-ember-orange);
-  padding-left: var(--spacing-md);
+.navbar-menu.active .navbar-nav li a {
+  display: block;
+  padding: var(--spacing-sm) 0;
 }
 
 /* Spacer for fixed header */
@@ -406,52 +387,71 @@ section {
 /* ============================================
    Footer
    ============================================ */
-.footer {
+.site-footer {
   background-color: var(--color-slate);
   color: var(--color-white);
-  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+  padding: var(--spacing-3xl) 0 var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+.site-footer .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 .footer-content {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
 }
 
-.footer-section h4 {
+.footer-section h3 {
   color: var(--color-white);
   margin-bottom: var(--spacing-md);
   font-size: 1.125rem;
 }
 
-.footer-section p,
-.footer-section a {
+.footer-section p {
   color: var(--color-concrete);
   font-size: 0.9375rem;
+  margin-bottom: 0;
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-link {
+.footer-section ul li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-section ul li a {
+  color: var(--color-concrete);
+  font-size: 0.9375rem;
   transition: color var(--transition-fast);
-  display: inline-block;
 }
 
-.footer-link:hover {
+.footer-section ul li a:hover {
   color: var(--color-current-teal);
 }
 
-.footer-social {
+.footer-brand .footer-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
   display: flex;
   gap: var(--spacing-sm);
   margin-top: var(--spacing-sm);
 }
 
-.social-link {
+.social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -459,10 +459,11 @@ section {
   height: 40px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
   transition: all var(--transition-fast);
 }
 
-.social-link:hover {
+.social-links a:hover {
   background-color: var(--color-current-teal);
   transform: translateY(-2px);
 }
@@ -476,6 +477,7 @@ section {
 .footer-bottom p {
   color: var(--color-concrete);
   font-size: 0.875rem;
+  margin-bottom: 0;
 }
 
 /* ============================================
@@ -836,16 +838,17 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .menu-toggle {
+  /* Show desktop nav, hide hamburger */
+  .hamburger {
     display: none;
   }
 
-  .nav {
+  .navbar-menu {
     display: block;
   }
 
-  .mobile-nav {
-    display: none;
+  .navbar-nav {
+    flex-direction: row;
   }
 
   .hero-title {
