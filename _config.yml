@@ -1,0 +1,91 @@
+# Altara Energy Site
+# Jekyll configuration for GitHub Pages
+
+# Site settings
+title: Altara Energy
+description: "Fast, reliable city EV charging. Convenient locations for your daily drive."
+url: "https://altaraenergy.com"
+baseurl: ""
+
+# Organization info
+organization:
+  name: Altara Energy
+  tagline: "Power up, move forward"
+  email: hello@altaraenergy.com
+  phone: "(650) 420-6300"
+  phone_raw: "6504206300"
+  address:
+    street: "2661 Market Street STE 85787"
+    city: "San Francisco"
+    state: "CA"
+    zip: "94114"
+
+# Social media
+social:
+  twitter: "https://x.com/altaraev"
+  instagram: "https://instagram.com/altaraev"
+  linkedin: "https://linkedin.com/company/altaraev"
+
+# Page metadata
+pages:
+  index:
+    title: "Altara Energy | Fast, Reliable City EV Charging"
+    description: "Fast, reliable EV charging at convenient city locations. Part of the Pathfinder Rewards network. Join today."
+    keywords: "city EV charging, DC fast charging, electric vehicle charging stations, EV charging network, fast charging near me"
+  about:
+    title: "About Altara Energy | City EV Charging"
+    description: "Altara Energy delivers convenient city EV charging with 99%+ uptime commitment. Professional operations, reliable service."
+    keywords: "Altara Energy, city EV charging, reliable charging network"
+  locations:
+    title: "Locations | Altara Energy Charging Stations"
+    description: "Find Altara Energy charging stations coming soon to San Francisco, Los Angeles, and San Diego. High-power DC fast charging."
+    keywords: "Altara locations, EV charging California, DC fast charging"
+  membership:
+    title: "Pathfinder Rewards | Altara Energy Membership"
+    description: "Join Pathfinder Rewards for flat-rate pricing with no time-of-use surprises. Free membership works at Altara and partner networks."
+    keywords: "Pathfinder Rewards, flat-rate charging, EV charging membership"
+  fleet:
+    title: "Fleet Solutions | Altara Energy for Commercial Drivers"
+    description: "Reliable EV charging for ride-share, delivery, and commercial fleets. Volume discounts and dedicated support."
+    keywords: "fleet EV charging, rideshare charging, commercial EV"
+  partners:
+    title: "Partner with Altara Energy | Host a Charging Station"
+    description: "Bring Altara Energy to your high-traffic location. Revenue share opportunities for site hosts."
+    keywords: "EV charging partnership, charging station host"
+  faq:
+    title: "FAQ | Altara Energy"
+    description: "Frequently asked questions about Altara Energy charging stations, membership, and services."
+    keywords: "Altara FAQ, EV charging questions"
+  contact:
+    title: "Contact Altara Energy"
+    description: "Get in touch with Altara Energy for inquiries about charging stations, partnerships, or fleet solutions."
+    keywords: "contact Altara Energy, partnership opportunities"
+
+# Analytics
+analytics:
+  tinylytics_id: "9_N5xEnQSTdibXFSDoqf"
+  enabled: true
+
+# Asset versioning
+asset_version: "2.0.0"
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - .gitignore
+  - vendor
+  - .bundle
+  - oldsite
+  - Logo
+  - ALTARA_WEBSITE_PROJECT_BRIEF.md
+  - ALTARA_AI_IMAGE_PROMPTS.md
+  - altara-brand-guidelines-v2.html
