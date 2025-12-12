@@ -1,186 +1,360 @@
 ---
 layout: default
 title: "Altara Energy | Fast, Reliable City EV Charging"
-description: "Fast, reliable EV charging at convenient city locations. Join Pathfinder Rewards today."
+description: "Fast, reliable EV charging at convenient city locations. Join Pathfinder Rewards for flat-rate pricing and rewards across the network."
 ---
 
 <!-- Hero Section -->
-<section class="hero" style="background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%); min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative;">
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="hero-content" style="max-width: 1000px; margin: 0 auto;">
-            <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -1px; margin-bottom: 24px; color: white;">
-                Fast, Reliable Charging Where You Need It
-            </h1>
-            <p style="font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 400; opacity: 0.95; margin-bottom: 40px; color: white;">
-                City EV charging designed for your daily drive
-            </p>
-            <div class="hero-cta" style="display: flex; gap: 1rem; justify-content: center; width: 100%; flex-wrap: wrap;">
-                <a href="{{ '/locations.html' | relative_url }}" class="btn-primary btn-large" style="background: #F97316; color: white; padding: 16px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
-                    Find a Station
-                </a>
-                <a href="{{ '/membership.html' | relative_url }}" class="btn-secondary btn-large" style="background: white; color: #0891B2; border: 2px solid white; padding: 14px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
-                    Join Pathfinder Rewards
-                </a>
-            </div>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>Fast, Reliable Charging Where You Need It</h1>
+        <p>City EV charging designed for your daily drive. Pull in, plug in, power up. Get back on the road in minutes.</p>
+        <div class="hero-cta">
+          <a href="#locations" class="btn btn-primary btn-large">Find a Station</a>
+          <a href="#membership" class="btn btn-secondary btn-large">Join Pathfinder Rewards</a>
         </div>
+      </div>
+      <div class="hero-image">
+        <img src="{{ '/images/altara-logo-standard-v2.svg' | relative_url }}" alt="Altara Energy">
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Value Props Section -->
-<section class="services value-props" style="padding: 80px 0; background: var(--bg-primary);">
-    <div class="container">
-        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <!-- Card 1: Fast Charging -->
-            <div class="service-card">
-                <div class="service-icon" style="font-size: 3rem; margin-bottom: 1.5rem; color: #F97316;">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 16px;">
-                    Fast Charging
-                </h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
-                    10+ high-power DC fast chargers at every location. Get back on the road quickly with reliable, ultra-fast charging.
-                </p>
-            </div>
-
-            <!-- Card 2: Convenient Locations -->
-            <div class="service-card">
-                <div class="service-icon" style="font-size: 3rem; margin-bottom: 1.5rem; color: #F97316;">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 16px;">
-                    Convenient Locations
-                </h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
-                    Convenient sites near your daily routes. Strategic locations in cities where you need them, when you need them.
-                </p>
-            </div>
-
-            <!-- Card 3: Flat Member Rates -->
-            <div class="service-card">
-                <div class="service-icon" style="font-size: 3rem; margin-bottom: 1.5rem; color: #F97316;">
-                    <i class="fas fa-tag"></i>
-                </div>
-                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 16px;">
-                    Flat Member Rates
-                </h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
-                    No time-of-use surprises—one rate, any time. Altara Network members enjoy consistent pricing at 3pm or 3am.
-                </p>
-            </div>
-        </div>
+<!-- Problem Statement -->
+<section class="bg-light problem-section">
+  <div class="container">
+    <div class="problem-content">
+      <h2>City drivers need charging that fits their schedule.</h2>
+      <p>No time for unreliable chargers or confusing pricing. Altara delivers fast, dependable charging at convenient locations with transparent flat-rate pricing.</p>
     </div>
+  </div>
 </section>
 
-<!-- How It Works Section -->
-<section class="how-it-works" style="padding: 80px 40px; background: var(--bg-light);">
-    <div class="container">
-        <!-- Section Header -->
-        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
-            <h2 style="font-size: 2.5rem; color: #0891B2; margin-bottom: 1rem;">
-                How It Works
-            </h2>
-            <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary); max-width: 700px; margin: 0 auto;">
-                Charging made simple. Get in, get charged, get going.
-            </p>
-        </div>
-
-        <!-- Three Steps -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto;">
-            <!-- Step 1: Pull In -->
-            <div style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #F97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: 600;">
-                    1
-                </div>
-                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 1rem;">
-                    Pull In
-                </h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
-                    Find a convenient Altara station near your route. Open chargers are clearly marked in the app.
-                </p>
-            </div>
-
-            <!-- Step 2: Plug In -->
-            <div style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #F97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: 600;">
-                    2
-                </div>
-                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 1rem;">
-                    Plug In
-                </h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
-                    Connect your EV and authorize with the app. High-power DC fast charging starts immediately.
-                </p>
-            </div>
-
-            <!-- Step 3: Power Up -->
-            <div style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #F97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: 600;">
-                    3
-                </div>
-                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 1rem;">
-                    Power Up
-                </h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
-                    Grab refreshments from our on-site partners while you charge. You'll be back on the road in no time.
-                </p>
-            </div>
-        </div>
+<!-- How It Works -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Simple & Fast</span>
+      <h2>Pull In. Plug In. Power Up.</h2>
     </div>
+
+    <div class="grid grid-3">
+      <div class="card text-center">
+        <div class="step-number">1</div>
+        <h3>Pull In</h3>
+        <p>Drive into any Altara location. Our stations are in convenient city locations near your daily routes.</p>
+      </div>
+
+      <div class="card text-center">
+        <div class="step-number">2</div>
+        <h3>Plug In</h3>
+        <p>Connect your vehicle to one of our high-power DC fast chargers. Works with all EVs.</p>
+      </div>
+
+      <div class="card text-center">
+        <div class="step-number">3</div>
+        <h3>Power Up</h3>
+        <p>Charge up in 20-30 minutes. Grab a coffee, stretch your legs, and get back on the road refreshed.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Pathfinder Rewards Section -->
-<section class="pathfinder-rewards" style="padding: 80px 40px; background: var(--bg-primary);">
-    <div class="container">
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2.5rem; color: #0891B2; margin-bottom: 1.5rem;">
-                Join Pathfinder Rewards
-            </h2>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2rem;">
-                Join Pathfinder Rewards—accepted at Altara and partner charging networks. Earn rewards on every charge and enjoy exclusive member benefits.
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; color: #F97316; margin-bottom: 0.5rem;">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p style="font-size: 1.05rem; color: var(--text-primary);">Earn rewards on every charge</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; color: #F97316; margin-bottom: 0.5rem;">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <p style="font-size: 1.05rem; color: var(--text-primary);">Use at Altara & partner networks</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; color: #F97316; margin-bottom: 0.5rem;">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <p style="font-size: 1.05rem; color: var(--text-primary);">Flat-rate pricing, any time</p>
-                </div>
-            </div>
-            <div style="margin-top: 3rem;">
-                <a href="{{ '/membership.html' | relative_url }}" class="btn-primary btn-large" style="background: #F97316; color: white; padding: 16px 40px; border-radius: 6px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
-                    Join for Free
-                </a>
-            </div>
-        </div>
+<!-- Value Props -->
+<section id="features" class="bg-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">The Altara Difference</span>
+      <h2>Charging built for city drivers</h2>
+      <p>Every detail designed to get you back on the road faster.</p>
     </div>
+
+    <div class="feature-grid">
+      <div class="feature-content">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div>
+              <strong>10+ High-Power Chargers</strong>
+              <p>Every location features multiple DC fast chargers. No waiting, no lines.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <strong>Convenient City Locations</strong>
+              <p>Strategically placed near your daily routes. Charging fits your life.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-tag"></i>
+            </div>
+            <div>
+              <strong>Flat Member Rates</strong>
+              <p>No time-of-use surprises. One rate, any time.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div>
+              <strong>99%+ Uptime</strong>
+              <p>Professional operations and real-time monitoring.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-image">
+        <img src="{{ '/images/altara-logo-standard-v2.svg' | relative_url }}" alt="Altara Charging">
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA Section -->
-<section class="pathfinder-cta" style="padding: 100px 40px; background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%); text-align: center; color: white;">
-    <div class="container">
-        <div class="cta-content" style="max-width: 900px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; font-weight: 600; letter-spacing: -1px; margin-bottom: 24px; color: white;">
-                Ready to Power Up?
-            </h2>
-            <p style="font-size: 1.3rem; line-height: 1.8; opacity: 0.95; margin-bottom: 48px; color: white;">
-                Join Pathfinder Rewards today and enjoy fast, reliable charging at convenient city locations. Free membership. Flat-rate pricing. No surprises.
-            </p>
-            <a href="{{ '/membership.html' | relative_url }}" class="btn-primary btn-large" style="background: #F97316; color: white; padding: 16px 40px; border-radius: 6px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">
-                Join Pathfinder Rewards
-            </a>
-        </div>
+<!-- Locations -->
+<section id="locations">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Coming Soon</span>
+      <h2>Launching in California</h2>
+      <p>Our first locations open in 2026. Get notified when we're near you.</p>
     </div>
+
+    <div class="grid grid-3">
+      <div class="location-card">
+        <div class="location-icon">
+          <i class="fas fa-city"></i>
+        </div>
+        <h4>San Francisco Bay Area</h4>
+        <p>Multiple locations across the Bay Area for daily commuters and city drivers.</p>
+      </div>
+
+      <div class="location-card">
+        <div class="location-icon">
+          <i class="fas fa-sun"></i>
+        </div>
+        <h4>Los Angeles</h4>
+        <p>Convenient charging throughout LA for rideshare, delivery, and everyday drivers.</p>
+      </div>
+
+      <div class="location-card">
+        <div class="location-icon">
+          <i class="fas fa-water"></i>
+        </div>
+        <h4>San Diego</h4>
+        <p>Fast, reliable charging in San Diego's busiest neighborhoods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pathfinder Rewards -->
+<section id="membership" class="pathfinder-section">
+  <div class="container">
+    <div class="pathfinder-content">
+      <span class="section-badge light">Loyalty Program</span>
+      <h2>Pathfinder Rewards</h2>
+      <p class="lead">Earn rewards on every charge. Works at Altara and partner networks.</p>
+
+      <div class="grid grid-3 rewards-grid">
+        <div class="reward-card">
+          <h4>Free to Join</h4>
+          <p>No membership fees. Sign up and start earning immediately.</p>
+        </div>
+        <div class="reward-card">
+          <h4>Up to 15% Back</h4>
+          <p>Earn credits on every charge. Higher tiers unlock bigger rewards.</p>
+        </div>
+        <div class="reward-card">
+          <h4>Network-Wide</h4>
+          <p>Your rewards work at Altara and participating partner networks.</p>
+        </div>
+      </div>
+
+      <a href="https://rangeway.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Join Pathfinder Rewards</a>
+    </div>
+  </div>
+</section>
+
+<!-- Fleet Section -->
+<section id="fleet" class="bg-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">For Business</span>
+      <h2>Fleet Solutions</h2>
+      <p>Reliable charging for rideshare, delivery, and commercial fleets.</p>
+    </div>
+
+    <div class="feature-grid reverse">
+      <div class="feature-image">
+        <img src="{{ '/images/altara-logo-standard-v2.svg' | relative_url }}" alt="Fleet Charging">
+      </div>
+      <div class="feature-content">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <div>
+              <strong>Volume Discounts</strong>
+              <p>Better rates for high-volume charging.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div>
+              <strong>Dedicated Support</strong>
+              <p>Fleet-specific support team. Priority assistance.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div>
+              <strong>Usage Analytics</strong>
+              <p>Track charging across your fleet with detailed reporting.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="mailto:fleet@altaraenergy.com" class="btn btn-secondary">Contact Fleet Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<section id="partners">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Site Hosts</span>
+      <h2>Partner With Us</h2>
+      <p>Bring Altara charging to your location.</p>
+    </div>
+
+    <div class="grid grid-2 partner-grid">
+      <div class="card">
+        <h4>Revenue Share</h4>
+        <p>Earn ongoing revenue from charging at your location. We handle installation, operations, and maintenance.</p>
+      </div>
+
+      <div class="card">
+        <h4>Drive Traffic</h4>
+        <p>EV drivers need 20-30 minutes while charging. Turn that into foot traffic for your business.</p>
+      </div>
+
+      <div class="card">
+        <h4>Zero Upfront Cost</h4>
+        <p>We invest in the equipment and installation. You provide the space.</p>
+      </div>
+
+      <div class="card">
+        <h4>Turnkey Operations</h4>
+        <p>Professional management, 24/7 monitoring, rapid maintenance response.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-lg">
+      <a href="mailto:partners@altaraenergy.com" class="btn btn-primary btn-large">Become a Partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="bg-light">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Questions</span>
+      <h2>Frequently Asked</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>What vehicles can charge at Altara?</h4>
+        <p>All electric vehicles. Our stations feature both CCS and NACS connectors.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How fast is the charging?</h4>
+        <p>Our DC fast chargers typically bring most vehicles from 20% to 80% in 20-30 minutes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How do I pay?</h4>
+        <p>Credit card at the charger, or use the Pathfinder app for member pricing and rewards.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What is Pathfinder Rewards?</h4>
+        <p>Our free loyalty program. Earn credits on every charge, usable at Altara and partner networks.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>When are you opening?</h4>
+        <p>Our first California locations open in 2026. Join our list to be notified.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Get in Touch</span>
+      <h2>Contact Us</h2>
+    </div>
+
+    <div class="grid grid-3 contact-grid">
+      <div class="card text-center">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h4>General Inquiries</h4>
+        <a href="mailto:info@altaraenergy.com">info@altaraenergy.com</a>
+      </div>
+
+      <div class="card text-center">
+        <div class="contact-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h4>Fleet Solutions</h4>
+        <a href="mailto:fleet@altaraenergy.com">fleet@altaraenergy.com</a>
+      </div>
+
+      <div class="card text-center">
+        <div class="contact-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h4>Partnerships</h4>
+        <a href="mailto:partners@altaraenergy.com">partners@altaraenergy.com</a>
+      </div>
+    </div>
+
+    <div class="text-center mt-xl">
+      <p class="text-secondary">Follow us</p>
+      <div class="social-links-inline">
+        <a href="https://twitter.com/altaraenergy" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://instagram.com/altaraenergy" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/altaraenergy" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
 </section>
