@@ -216,8 +216,11 @@ section { padding: 5rem 0; }
   align-items: center;
 }
 
+.hero-image { order: -1; }
+
 @media (min-width: 768px) {
   .hero-grid { grid-template-columns: 1fr 1fr; }
+  .hero-image { order: 0; }
 }
 
 .hero-content h1 { color: var(--white); }
