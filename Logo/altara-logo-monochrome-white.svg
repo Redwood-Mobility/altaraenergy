@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <!-- Orbital ring in white -->
+  <circle 
+    cx="120" 
+    cy="120" 
+    r="85" 
+    fill="none" 
+    stroke="#FFFFFF" 
+    stroke-width="18" 
+    stroke-dasharray="360 84" 
+    transform="rotate(-90 120 120)"
+  />
+  
+  <!-- "A" symbol in white -->
+  <path 
+    d="M 80 160 L 120 65 L 160 160" 
+    fill="none" 
+    stroke="#FFFFFF" 
+    stroke-width="20" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+</svg>

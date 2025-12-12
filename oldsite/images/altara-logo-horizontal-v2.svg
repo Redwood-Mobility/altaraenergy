@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <defs>
+    <linearGradient id="orbitalGradientHoriz" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="50%" stop-color="#0891B2"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo icon group -->
+  <g transform="translate(10, 0)">
+    <!-- Orbital ring with gradient -->
+    <circle 
+      cx="60" 
+      cy="60" 
+      r="42.5" 
+      fill="none" 
+      stroke="url(#orbitalGradientHoriz)" 
+      stroke-width="9" 
+      stroke-dasharray="180 42" 
+      transform="rotate(-90 60 60)"
+    />
+    
+    <!-- "A" symbol in Current Teal -->
+    <path 
+      d="M 40 80 L 60 32.5 L 80 80" 
+      fill="none" 
+      stroke="#0891B2" 
+      stroke-width="10" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    />
+  </g>
+  
+  <!-- "Altara" wordmark in Outfit Semi-Bold -->
+  <text 
+    x="145" 
+    y="78" 
+    font-family="Outfit, -apple-system, BlinkMacSystemFont, sans-serif" 
+    font-size="56" 
+    font-weight="600" 
+    fill="#0891B2" 
+    letter-spacing="-1"
+  >Altara</text>
+</svg>
