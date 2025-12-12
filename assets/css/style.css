@@ -117,6 +117,19 @@ section { padding: 5rem 0; }
   transform: translateY(-2px);
 }
 
+/* Light variant for dark backgrounds */
+.btn-outline-light {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline-light:hover {
+  background: var(--white);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
 .btn-large { padding: 1rem 2rem; font-size: 1.125rem; }
 
 /* Header */
