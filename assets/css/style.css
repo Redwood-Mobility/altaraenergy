@@ -168,11 +168,35 @@ section { padding: 5rem 0; }
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  position: relative;
 }
 
 .navbar-brand .logo { height: 40px; width: auto; }
 
 .navbar-menu { display: none; }
+.navbar-menu.active {
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--header-bg);
+  box-shadow: var(--shadow-md);
+  padding: 1rem 0;
+}
+.navbar-menu.active .navbar-nav {
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+}
+.navbar-menu.active .navbar-nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.navbar-menu.active .navbar-nav li:last-child a {
+  border-bottom: none;
+}
 .navbar-nav { display: flex; gap: 2rem; align-items: center; }
 .navbar-nav a {
   color: var(--text-primary);
