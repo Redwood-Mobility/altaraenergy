@@ -25,6 +25,12 @@
   --ocean-deep: #0891B2;
   --sunset-coral: #F97316;
 
+  /* Page-level variable aliases */
+  --bg-primary: var(--color-white);
+  --bg-light: var(--color-bg-light);
+  --text-primary: var(--color-slate);
+  --text-secondary: var(--color-concrete);
+
   /* Semantic Color Assignments */
   --color-primary: var(--color-current-teal);
   --color-primary-dark: var(--color-deep-teal);
