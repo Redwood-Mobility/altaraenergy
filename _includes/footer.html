@@ -1,82 +1,49 @@
 <footer class="site-footer">
   <div class="container">
-
-    <!-- Main Footer Content -->
-    <div class="footer-grid">
-
-      <!-- Column 1: About Altara -->
-      <div class="footer-column">
-        <div class="footer-logo">
-          <img src="{{ '/images/altara-logo-monochrome-white.svg' | relative_url }}" alt="Altara Energy" class="logo">
-        </div>
-        <p class="footer-description">
-          Fast, reliable EV charging at convenient city locations. Part of the Pathfinder Rewards network.
-        </p>
-        <p style="color: var(--color-accent-light); font-weight: 500; margin-top: 1rem;">Pathfinder Network Member</p>
+    <div class="footer-content">
+      <div class="footer-section footer-brand">
+        <img src="{{ '/images/altara-logo-monochrome-white.svg' | relative_url }}" alt="Altara Energy" class="footer-logo">
+        <p>Fast, reliable city EV charging</p>
       </div>
 
-      <!-- Column 2: Quick Links -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Quick Links</h3>
-        <ul class="footer-links">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
           <li><a href="{{ '/locations' | relative_url }}">Locations</a></li>
-          <li><a href="{{ '/membership' | relative_url }}">Pathfinder Rewards</a></li>
-          <li><a href="{{ '/fleet' | relative_url }}">Fleet Solutions</a></li>
-          <li><a href="{{ '/partners' | relative_url }}">Partner With Us</a></li>
-          <li><a href="{{ '/faq' | relative_url }}">FAQ</a></li>
+          <li><a href="{{ '/membership' | relative_url }}">Membership</a></li>
+          <li><a href="{{ '/fleet' | relative_url }}">Fleet</a></li>
+          <li><a href="{{ '/partners' | relative_url }}">Partners</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: Company -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Company</h3>
-        <ul class="footer-links">
-          <li><a href="{{ '/about' | relative_url }}">About Altara</a></li>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">About</a></li>
           <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
-          <li><a href="mailto:{{ site.organization.email }}">{{ site.organization.email }}</a></li>
-          <li><a href="tel:+1{{ site.organization.phone_raw }}">{{ site.organization.phone }}</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Legal -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Legal</h3>
-        <ul class="footer-links">
           <li><a href="{{ '/privacy' | relative_url }}">Privacy Policy</a></li>
           <li><a href="{{ '/terms' | relative_url }}">Terms of Service</a></li>
-          <li><a href="{{ '/accessibility' | relative_url }}">Accessibility</a></li>
         </ul>
       </div>
 
-    </div>
-
-    <!-- Footer Bottom Bar -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-content">
-
-        <!-- Copyright -->
-        <p class="copyright">
-          &copy; {{ 'now' | date: "%Y" }} {{ site.organization.name }}. All rights reserved.
-        </p>
-
-        <!-- Social Icons -->
-        <div class="footer-social">
-          <a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-icon">
-            <i class="fab fa-x-twitter"></i>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
           </a>
-          <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+          <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+          <a href="https://linkedin.com/company/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
-
       </div>
     </div>
 
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} Altara Energy. All rights reserved.</p>
+    </div>
   </div>
 </footer>
-
-<!-- External JavaScript -->
-<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.asset_version }}"></script>

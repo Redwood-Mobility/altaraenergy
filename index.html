@@ -1,351 +1,186 @@
 ---
 layout: default
 title: "Altara Energy | Fast, Reliable City EV Charging"
-description: "Fast, reliable EV charging at convenient city locations. Part of the Pathfinder Rewards network. Join today."
+description: "Fast, reliable EV charging at convenient city locations. Join Pathfinder Rewards today."
 ---
 
-<style>
-    /* Hero Section */
-    .hero-home {
-        background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--color-deep-teal) 100%);
-        padding: 6rem 0 4rem;
-        color: white;
-        text-align: center;
-    }
-
-    .hero-home h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: white;
-    }
-
-    .hero-home .subhead {
-        font-size: 1.5rem;
-        margin-bottom: 2.5rem;
-        opacity: 0.95;
-        font-weight: 400;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    /* Value Props Section */
-    .value-props {
-        padding: 5rem 0;
-        background: white;
-    }
-
-    .value-props h2 {
-        text-align: center;
-        margin-bottom: 3rem;
-        color: var(--color-text-primary);
-    }
-
-    .value-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2.5rem;
-        margin-top: 3rem;
-    }
-
-    .value-card {
-        text-align: center;
-        padding: 2rem 1.5rem;
-    }
-
-    .value-card .icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    .value-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--color-text-primary);
-    }
-
-    .value-card p {
-        font-size: 1.125rem;
-        color: var(--color-text-secondary);
-        line-height: 1.6;
-    }
-
-    /* How It Works Section */
-    .how-it-works {
-        padding: 5rem 0;
-        background: var(--color-bg-light);
-    }
-
-    .how-it-works h2 {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
-    .steps-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .step {
-        text-align: center;
-        padding: 2rem 1rem;
-        background: white;
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .step-number {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--ocean-deep), var(--color-deep-teal));
-        color: white;
-        font-size: 1.75rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-    }
-
-    .step h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        color: var(--color-text-primary);
-    }
-
-    /* Amenities Section */
-    .amenities {
-        padding: 5rem 0;
-        background: white;
-    }
-
-    .amenities h2 {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .amenities-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .amenities-content p {
-        font-size: 1.25rem;
-        line-height: 1.8;
-        color: var(--color-text-secondary);
-    }
-
-    /* Pathfinder Section */
-    .pathfinder {
-        padding: 5rem 0;
-        background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--color-deep-teal) 100%);
-        color: white;
-    }
-
-    .pathfinder h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        color: white;
-    }
-
-    .pathfinder .intro {
-        text-align: center;
-        font-size: 1.25rem;
-        margin-bottom: 3rem;
-        opacity: 0.95;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .benefit-card {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 2rem;
-        border-radius: var(--radius-lg);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .benefit-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--sunset-coral);
-    }
-
-    .benefit-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: white;
-    }
-
-    .benefit-card p {
-        font-size: 1.125rem;
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-
-    /* Final CTA Section */
-    .final-cta {
-        padding: 5rem 0;
-        background: white;
-        text-align: center;
-    }
-
-    .final-cta h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--color-text-primary);
-    }
-
-    .final-cta p {
-        font-size: 1.25rem;
-        color: var(--color-text-secondary);
-        margin-bottom: 2.5rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .hero-home h1 {
-            font-size: 2.25rem;
-        }
-
-        .hero-home .subhead {
-            font-size: 1.125rem;
-        }
-
-        .cta-buttons {
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        .cta-buttons .btn {
-            width: 100%;
-        }
-
-        .value-grid,
-        .steps-grid,
-        .benefits-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-
 <!-- Hero Section -->
-<section class="hero-home">
-    <div class="container">
-        <h1>Fast, Reliable Charging Where You Need It</h1>
-        <p class="subhead">City EV charging designed for your daily drive</p>
-        <div class="cta-buttons">
-            <a href="/locations.html" class="btn btn-secondary btn-lg">Find a Station</a>
-            <a href="/membership.html" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Join Pathfinder Rewards</a>
+<section class="hero" style="background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%); min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative;">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="max-width: 1000px; margin: 0 auto;">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -1px; margin-bottom: 24px; color: white;">
+                Fast, Reliable Charging Where You Need It
+            </h1>
+            <p style="font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 400; opacity: 0.95; margin-bottom: 40px; color: white;">
+                City EV charging designed for your daily drive
+            </p>
+            <div class="hero-cta" style="display: flex; gap: 1rem; justify-content: center; width: 100%; flex-wrap: wrap;">
+                <a href="{{ '/locations.html' | relative_url }}" class="btn-primary btn-large" style="background: #F97316; color: white; padding: 16px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
+                    Find a Station
+                </a>
+                <a href="{{ '/membership.html' | relative_url }}" class="btn-secondary btn-large" style="background: white; color: #0891B2; border: 2px solid white; padding: 14px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
+                    Join Pathfinder Rewards
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Value Props Section -->
-<section class="value-props">
+<section class="services value-props" style="padding: 80px 0; background: var(--bg-primary);">
     <div class="container">
-        <div class="value-grid">
-            <div class="value-card">
-                <div class="icon" style="color: var(--sunset-coral);">¡</div>
-                <h3>Fast Charging</h3>
-                <p>10+ high-power DC fast chargers at every location</p>
+        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Card 1: Fast Charging -->
+            <div class="service-card">
+                <div class="service-icon" style="font-size: 3rem; margin-bottom: 1.5rem; color: #F97316;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 16px;">
+                    Fast Charging
+                </h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                    10+ high-power DC fast chargers at every location. Get back on the road quickly with reliable, ultra-fast charging.
+                </p>
             </div>
-            <div class="value-card">
-                <div class="icon" style="color: var(--ocean-deep);">=Í</div>
-                <h3>Convenient Locations</h3>
-                <p>Convenient sites near your daily routes</p>
+
+            <!-- Card 2: Convenient Locations -->
+            <div class="service-card">
+                <div class="service-icon" style="font-size: 3rem; margin-bottom: 1.5rem; color: #F97316;">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 16px;">
+                    Convenient Locations
+                </h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                    Convenient sites near your daily routes. Strategic locations in cities where you need them, when you need them.
+                </p>
             </div>
-            <div class="value-card">
-                <div class="icon" style="color: var(--sunset-coral);">=°</div>
-                <h3>Flat Member Rates</h3>
-                <p>No time-of-use surprisesone rate, any time</p>
+
+            <!-- Card 3: Flat Member Rates -->
+            <div class="service-card">
+                <div class="service-icon" style="font-size: 3rem; margin-bottom: 1.5rem; color: #F97316;">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 16px;">
+                    Flat Member Rates
+                </h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                    No time-of-use surprisesâ€”one rate, any time. Altara Network members enjoy consistent pricing at 3pm or 3am.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- How It Works Section -->
-<section class="how-it-works">
+<section class="how-it-works" style="padding: 80px 40px; background: var(--bg-light);">
     <div class="container">
-        <h2>How It Works</h2>
-        <div class="steps-grid">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Pull in</h3>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Plug in</h3>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Power up</h3>
-            </div>
+        <!-- Section Header -->
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; color: #0891B2; margin-bottom: 1rem;">
+                How It Works
+            </h2>
+            <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary); max-width: 700px; margin: 0 auto;">
+                Charging made simple. Get in, get charged, get going.
+            </p>
         </div>
-    </div>
-</section>
 
-<!-- Amenities Section -->
-<section class="amenities">
-    <div class="container">
-        <h2>Comfortable Amenities</h2>
-        <div class="amenities-content">
-            <p>Each location features comfortable waiting areas, and site-specific amenities like shaded seating, picnic areas, or dog parks</p>
+        <!-- Three Steps -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto;">
+            <!-- Step 1: Pull In -->
+            <div style="text-align: center;">
+                <div style="width: 80px; height: 80px; background: #F97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: 600;">
+                    1
+                </div>
+                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 1rem;">
+                    Pull In
+                </h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                    Find a convenient Altara station near your route. Open chargers are clearly marked in the app.
+                </p>
+            </div>
+
+            <!-- Step 2: Plug In -->
+            <div style="text-align: center;">
+                <div style="width: 80px; height: 80px; background: #F97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: 600;">
+                    2
+                </div>
+                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 1rem;">
+                    Plug In
+                </h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                    Connect your EV and authorize with the app. High-power DC fast charging starts immediately.
+                </p>
+            </div>
+
+            <!-- Step 3: Power Up -->
+            <div style="text-align: center;">
+                <div style="width: 80px; height: 80px; background: #F97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: 600;">
+                    3
+                </div>
+                <h3 style="font-size: 1.5rem; color: #0891B2; margin-bottom: 1rem;">
+                    Power Up
+                </h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                    Grab refreshments from our on-site partners while you charge. You'll be back on the road in no time.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Pathfinder Rewards Section -->
-<section class="pathfinder">
+<section class="pathfinder-rewards" style="padding: 80px 40px; background: var(--bg-primary);">
     <div class="container">
-        <h2>Pathfinder Rewards</h2>
-        <p class="intro">Join Pathfinder Rewards for benefits at Altara and partner charging networks</p>
-
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="icon"><</div>
-                <h3>Earn Rewards</h3>
-                <p>Get credits back on every charge that you can use for future sessions</p>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; color: #0891B2; margin-bottom: 1.5rem;">
+                Join Pathfinder Rewards
+            </h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2rem;">
+                Join Pathfinder Rewardsâ€”accepted at Altara and partner charging networks. Earn rewards on every charge and enjoy exclusive member benefits.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #F97316; margin-bottom: 0.5rem;">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-size: 1.05rem; color: var(--text-primary);">Earn rewards on every charge</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #F97316; margin-bottom: 0.5rem;">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <p style="font-size: 1.05rem; color: var(--text-primary);">Use at Altara & partner networks</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #F97316; margin-bottom: 0.5rem;">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <p style="font-size: 1.05rem; color: var(--text-primary);">Flat-rate pricing, any time</p>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="icon"><</div>
-                <h3>Use Across Networks</h3>
-                <p>One membership works at Altara and partner charging locations</p>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">(</div>
-                <h3>Redeem at Partners</h3>
-                <p>Spend your credits anywhere in the Pathfinder network</p>
+            <div style="margin-top: 3rem;">
+                <a href="{{ '/membership.html' | relative_url }}" class="btn-primary btn-large" style="background: #F97316; color: white; padding: 16px 40px; border-radius: 6px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
+                    Join for Free
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Final CTA Section -->
-<section class="final-cta">
+<!-- CTA Section -->
+<section class="pathfinder-cta" style="padding: 100px 40px; background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%); text-align: center; color: white;">
     <div class="container">
-        <h2>Join Altara Network Today</h2>
-        <p>Free membership. Flat-rate pricing. No time-of-use surprises.</p>
-        <a href="/membership.html" class="btn btn-primary btn-lg">Get Started</a>
+        <div class="cta-content" style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; font-weight: 600; letter-spacing: -1px; margin-bottom: 24px; color: white;">
+                Ready to Power Up?
+            </h2>
+            <p style="font-size: 1.3rem; line-height: 1.8; opacity: 0.95; margin-bottom: 48px; color: white;">
+                Join Pathfinder Rewards today and enjoy fast, reliable charging at convenient city locations. Free membership. Flat-rate pricing. No surprises.
+            </p>
+            <a href="{{ '/membership.html' | relative_url }}" class="btn-primary btn-large" style="background: #F97316; color: white; padding: 16px 40px; border-radius: 6px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">
+                Join Pathfinder Rewards
+            </a>
+        </div>
     </div>
 </section>
