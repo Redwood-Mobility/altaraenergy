@@ -263,7 +263,11 @@ section { padding: 5rem 0; }
 
 .hero-content h1 { color: var(--text-primary); }
 .hero-content p { color: var(--text-secondary); font-size: 1.25rem; margin-bottom: 2rem; }
-.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+@media (min-width: 768px) {
+  .hero-cta { justify-content: flex-start; }
+}
 
 .hero-image img { max-width: 350px; margin: 0 auto; }
 
