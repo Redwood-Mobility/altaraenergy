@@ -546,6 +546,66 @@ section { padding: 5rem 0; }
 .mt-sm { margin-top: 1rem; }
 .mt-lg { margin-top: 2rem; }
 .mt-xl { margin-top: 3rem; }
+.mb-lg { margin-bottom: 2rem; }
+
+/* Service Icons */
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+/* 4-column grid */
+.grid-4 { grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* About section */
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-content h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
+
+/* Partner card icons */
+.card h4 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+/* Contact grid - 6 items */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* Responsive */
 @media (max-width: 767px) {
