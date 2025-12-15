@@ -35,7 +35,7 @@ Build a Jekyll-based website for **Altara Energy** (altaraenergy.com) to be host
 ### Brand Personality
 - **Efficient**: Quick in-and-out, optimized for busy lives
 - **Accessible**: City locations, straightforward pricing, no frills
-- **Reliable**: High uptime standards, real-time monitoring, professional operations
+- **Reliable**: Real-time monitoring, professional operations
 - **Flexible**: Adaptable to various site hosts and partnership models
 
 ### Visual Direction (Urban Current Edition v2.0)
@@ -146,7 +146,7 @@ Build a Jekyll-based website for **Altara Energy** (altaraenergy.com) to be host
 
 **Key Content**:
 - Fleet-specific benefits (volume discounts, dedicated support)
-- Reliability guarantee (uptime stats)
+- Reliability guarantee
 - Convenient city locations for route optimization
 - Contact form for fleet partnerships
 
@@ -166,7 +166,7 @@ Build a Jekyll-based website for **Altara Energy** (altaraenergy.com) to be host
 **Key Content**:
 - Mission: "Making EV charging as convenient as filling up at your favorite gas station"
 - Vision: "Building a city charging network designed for daily drivers, fleet operators, and commuters"
-- Technology: Professional network operations center (NOC), 99%+ uptime commitment, real-time monitoring
+- Technology: Professional network operations center (NOC), real-time monitoring
 - Partnership approach: "We partner with retailers, property owners, and businesses to bring charging where you need it"
 - Pathfinder Network: "Proud member of the Pathfinder Rewards network"
 - Team: Professional charging network operators with experience in infrastructure and hospitality
@@ -310,7 +310,6 @@ Since Altara doesn't exist yet, use appropriate placeholder content:
 
 ### Stats/Claims
 Only use claims that Altara can back up independently:
-- ✅ "99%+ uptime commitment"
 - ✅ "Professional network operations center"
 - ✅ "Real-time monitoring and support"
 - ✅ "Part of the Pathfinder Rewards network"
@@ -668,7 +667,7 @@ During development, if clarification needed on:
 - **Brand positioning**: Altara is standalone city charging network, not connected to other brands except via Pathfinder Network
 - **Pricing structure**: Use Pathfinder Rewards tiers (credits back model, not rate discounts)
 - **Partnership model**: Flexible site host agreements, B2B partnerships, white-label potential
-- **Operational details**: Professional NOC, 99%+ uptime standards, real-time monitoring
+- **Operational details**: Professional NOC, real-time monitoring
 - **Pathfinder Network**: Multi-brand loyalty program, Altara is a participating network
 
 ---
