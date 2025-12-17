@@ -429,6 +429,16 @@ section { padding: 5rem 0; }
 
 /* Partner Grid */
 .partner-grid { max-width: 800px; margin: 0 auto; }
+.partner-grid .card {
+  display: flex;
+  flex-direction: column;
+}
+.partner-grid .card p {
+  flex: 1;
+}
+.partner-grid .card .btn {
+  align-self: flex-start;
+}
 
 /* FAQ */
 .faq-list {
