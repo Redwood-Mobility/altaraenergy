@@ -275,7 +275,7 @@ section { padding: 5rem 0; }
   .hero-cta { justify-content: flex-start; }
 }
 
-.hero-image img { max-width: 500px; width: 100%; margin: 0 auto; }
+.hero-image img { max-width: 400px; width: 100%; margin: 0 auto; }
 
 /* Hero dark mode */
 @media (prefers-color-scheme: dark) {
