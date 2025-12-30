@@ -11,68 +11,65 @@ Altara Energy website - a Jekyll-based static site for a city convenience EV cha
 ## Build & Development Commands
 
 ```bash
-# Install dependencies (from oldsite directory)
-cd oldsite && bundle install
+# Install dependencies
+bundle install
 
 # Local development server
-cd oldsite && bundle exec jekyll serve
+bundle exec jekyll serve
 
 # Build for production
-cd oldsite && bundle exec jekyll build
+bundle exec jekyll build
 ```
 
 The site builds automatically on GitHub Pages when pushed to main branch.
 
 ## Project Structure
 
-The active site lives in `oldsite/` directory:
-
 ```
-oldsite/
-├── _config.yml          # Jekyll config, site metadata, organization info
+/
+├── _config.yml          # Jekyll config, site metadata, SEO settings
 ├── _layouts/default.html # Base HTML template
 ├── _includes/
 │   ├── header.html      # Nav, meta tags, structured data
 │   └── footer.html      # Footer with links, social icons
-├── assets/
-│   ├── css/style.css    # All styles (includes dark mode)
-│   └── js/main.js       # Mobile menu, smooth scroll
-├── images/              # Logo variants, site images
-└── *.html               # Page files (index, about, locations, etc.)
+├── assets/css/style.css # All styles (includes dark mode)
+├── images/              # Logo variants (SVG files)
+└── index.html           # Homepage (currently the main page)
 ```
 
-Root-level files (`ALTARA_WEBSITE_PROJECT_BRIEF.md`, `altara-brand-guidelines-v2.html`, `Logo/`) are reference materials, not part of the build.
+Root-level reference materials (not part of build):
+- `ALTARA_WEBSITE_PROJECT_BRIEF.md` - Full brand positioning and content guidelines
+- `altara-brand-guidelines-v2.html` - Visual brand guidelines
+- `Logo/` - Original logo source files
 
 ## Key Configuration
 
 **_config.yml** contains:
 - Site metadata and SEO settings
-- Organization contact info
-- Social media links (@altaraev handles)
-- Page-specific meta descriptions and keywords
-- Tinylytics analytics ID
+- Social media links (@altaraenergy handles)
+- Build exclusions for reference materials
+
+**Gemfile**: Uses `github-pages` gem for GitHub Pages compatibility.
 
 ## Brand Guidelines
 
-- **Colors**: Ocean Deep (#0A4B6E), Sunset Coral (#FF6B4A), system supports dark mode
-- **Typography**: System font stack for performance
-- **Logo files**: Located in `oldsite/images/` (altara-logo-horizontal.svg, altara-logo-small.svg)
+- **Colors**: Current Teal (#0891B2), Ember Orange (#F97316), Deep Teal (#0E7490)
+- **Typography**: Outfit font via Google Fonts
+- **Logo files**: Located in `images/` (altara-logo-standard.svg, altara-logo-white.svg, altara-logo-mono-teal.svg, plus icon variants)
 - **Language**: Use "city" not "urban" in copy. Avoid premium/luxury positioning.
+- **Social handles**: @altaraev (Twitter/X, Instagram, LinkedIn)
 
-## Pages
+## Content Guidelines
 
-- index.html - Homepage with hero, value props, CTA
-- locations.html - Coming soon map, market list
-- membership.html - Pathfinder Rewards tiers
-- fleet.html - B2B fleet solutions
-- partners.html - Site host recruitment
-- about.html - Company mission
-- faq.html - Common questions
-- contact.html - Contact form
+- Use specific city names rather than "urban areas"
+- Focus on convenience, efficiency, accessibility
+- Pathfinder Rewards is the loyalty program (multi-network)
+- Avoid premium/luxury/adventure language
+- See `ALTARA_WEBSITE_PROJECT_BRIEF.md` for full messaging guidelines
 
 ## Dependencies
 
-- Jekyll 4.x
+- Jekyll (via github-pages gem)
 - jekyll-seo-tag plugin
 - Font Awesome (CDN)
-- Webrick (Ruby 3.0+ dev server)
+- Google Fonts (Outfit)

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altara Energy – Logo Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #0891B2;
+            --deep-teal: #0E7490;
+            --orange: #F97316;
+            --slate: #1E293B;
+            --light: #F8FAFC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--light);
+            color: var(--slate);
+        }
+        
+        .header {
+            background: var(--slate);
+            color: white;
+            padding: 48px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            opacity: 0.6;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        
+        .concepts {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
+        .section-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #64748B;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .concept-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .concept-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .logo-display {
+            padding: 64px 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            min-height: 280px;
+            background: white;
+        }
+        
+        .logo-display.dark {
+            background: var(--slate);
+        }
+        
+        .logo-display.teal {
+            background: var(--teal);
+        }
+        
+        .concept-footer {
+            padding: 20px 24px;
+            border-top: 1px solid #E2E8F0;
+        }
+        
+        .concept-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .concept-desc {
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+        
+        .size-demo {
+            margin-top: 48px;
+        }
+        
+        .size-row {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .size-row.dark {
+            background: var(--slate);
+        }
+        
+        .size-label {
+            font-size: 0.8rem;
+            color: #64748B;
+            width: 100px;
+            flex-shrink: 0;
+        }
+        
+        .size-row.dark .size-label {
+            color: #94A3B8;
+        }
+        
+        .icon-only {
+            margin-top: 48px;
+        }
+        
+        .icon-grid {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .icon-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        
+        .icon-container.light {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .icon-container.dark {
+            background: var(--slate);
+        }
+        
+        .icon-container.teal {
+            background: var(--teal);
+        }
+        
+        .icon-size {
+            font-size: 0.75rem;
+            color: #94A3B8;
+        }
+        
+        .context-section {
+            margin-top: 60px;
+            padding-top: 48px;
+            border-top: 1px solid #E2E8F0;
+        }
+        
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .context-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .context-label {
+            padding: 12px 16px;
+            font-size: 0.8rem;
+            color: #64748B;
+            border-bottom: 1px solid #E2E8F0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .context-display {
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+        }
+        
+        .context-display.dark {
+            background: var(--slate);
+        }
+        
+        .context-display.gradient {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--deep-teal) 100%);
+        }
+        
+        .biz-card {
+            width: 220px;
+            height: 130px;
+            background: white;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .biz-card-name {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--slate);
+        }
+        
+        .biz-card-title {
+            font-size: 10px;
+            color: #64748B;
+            margin-top: 2px;
+        }
+        
+        .biz-card-contact {
+            font-size: 9px;
+            color: #94A3B8;
+            margin-top: 8px;
+        }
+        
+        .website-header {
+            width: 100%;
+            background: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+            color: #64748B;
+        }
+        
+        .nav-link {
+            cursor: pointer;
+        }
+        
+        .nav-cta {
+            background: var(--teal);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Altara Energy – Final Logo</h1>
+        <p>Using the actual A shape with foundation bar</p>
+    </div>
+    
+    <div class="concepts">
+        
+        <h2 class="section-label">Primary Lockup</h2>
+        
+        <div class="concept-row">
+            <div class="concept-card">
+                <div class="logo-display">
+                    <svg width="360" height="56" viewBox="0 0 360 56">
+                        <!-- A symbol - matching the original -->
+                        <path d="M10 46 L28 10 L46 46" fill="none" stroke="#0891B2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Foundation bar -->
+                        <rect x="6" y="50" width="44" height="6" rx="2" fill="#F97316"/>
+                        <!-- Wordmark -->
+                        <text x="62" y="42" font-family="Outfit" font-size="34" font-weight="500" fill="#1E293B" letter-spacing="-0.5">Altara</text>
+                        <text x="152" y="42" font-family="Outfit" font-size="34" font-weight="300" fill="#1E293B" letter-spacing="-0.5">Energy</text>
+                    </svg>
+                </div>
+                <div class="concept-footer">
+                    <div class="concept-name">Light Background</div>
+                    <div class="concept-desc">Primary usage</div>
+                </div>
+            </div>
+            
+            <div class="concept-card">
+                <div class="logo-display dark">
+                    <svg width="360" height="56" viewBox="0 0 360 56">
+                        <path d="M10 46 L28 10 L46 46" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="6" y="50" width="44" height="6" rx="2" fill="#F97316"/>
+                        <text x="62" y="42" font-family="Outfit" font-size="34" font-weight="500" fill="white" letter-spacing="-0.5">Altara</text>
+                        <text x="152" y="42" font-family="Outfit" font-size="34" font-weight="300" fill="white" letter-spacing="-0.5">Energy</text>
+                    </svg>
+                </div>
+                <div class="concept-footer">
+                    <div class="concept-name">Dark Background</div>
+                    <div class="concept-desc">Reversed version</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-row">
+            <div class="concept-card">
+                <div class="logo-display teal">
+                    <svg width="360" height="56" viewBox="0 0 360 56">
+                        <path d="M10 46 L28 10 L46 46" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="6" y="50" width="44" height="6" rx="2" fill="#F97316"/>
+                        <text x="62" y="42" font-family="Outfit" font-size="34" font-weight="500" fill="white" letter-spacing="-0.5">Altara</text>
+                        <text x="152" y="42" font-family="Outfit" font-size="34" font-weight="300" fill="white" letter-spacing="-0.5">Energy</text>
+                    </svg>
+                </div>
+                <div class="concept-footer">
+                    <div class="concept-name">Brand Background</div>
+                    <div class="concept-desc">On teal</div>
+                </div>
+            </div>
+            
+            <div class="concept-card">
+                <div class="logo-display">
+                    <svg width="360" height="56" viewBox="0 0 360 56">
+                        <path d="M10 46 L28 10 L46 46" fill="none" stroke="#0891B2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="6" y="50" width="44" height="6" rx="2" fill="#0891B2"/>
+                        <text x="62" y="42" font-family="Outfit" font-size="34" font-weight="500" fill="#0891B2" letter-spacing="-0.5">Altara</text>
+                        <text x="152" y="42" font-family="Outfit" font-size="34" font-weight="300" fill="#0891B2" letter-spacing="-0.5">Energy</text>
+                    </svg>
+                </div>
+                <div class="concept-footer">
+                    <div class="concept-name">Monochrome</div>
+                    <div class="concept-desc">Single color when needed</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Size Variations -->
+        <div class="size-demo">
+            <h2 class="section-label">Scale Test</h2>
+            
+            <div class="size-row">
+                <div class="size-label">Large</div>
+                <svg width="440" height="70" viewBox="0 0 440 70">
+                    <path d="M12 58 L35 12 L58 58" fill="none" stroke="#0891B2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="7" y="62" width="56" height="8" rx="3" fill="#F97316"/>
+                    <text x="78" y="52" font-family="Outfit" font-size="42" font-weight="500" fill="#1E293B" letter-spacing="-0.5">Altara</text>
+                    <text x="190" y="52" font-family="Outfit" font-size="42" font-weight="300" fill="#1E293B" letter-spacing="-0.5">Energy</text>
+                </svg>
+            </div>
+            
+            <div class="size-row">
+                <div class="size-label">Medium</div>
+                <svg width="300" height="48" viewBox="0 0 300 48">
+                    <path d="M8 38 L24 8 L40 38" fill="none" stroke="#0891B2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="5" y="42" width="38" height="5" rx="2" fill="#F97316"/>
+                    <text x="52" y="35" font-family="Outfit" font-size="28" font-weight="500" fill="#1E293B" letter-spacing="-0.5">Altara</text>
+                    <text x="128" y="35" font-family="Outfit" font-size="28" font-weight="300" fill="#1E293B" letter-spacing="-0.5">Energy</text>
+                </svg>
+            </div>
+            
+            <div class="size-row">
+                <div class="size-label">Small</div>
+                <svg width="200" height="32" viewBox="0 0 200 32">
+                    <path d="M5 26 L16 5 L27 26" fill="none" stroke="#0891B2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="3" y="28" width="26" height="3" rx="1" fill="#F97316"/>
+                    <text x="36" y="23" font-family="Outfit" font-size="18" font-weight="500" fill="#1E293B" letter-spacing="-0.3">Altara</text>
+                    <text x="86" y="23" font-family="Outfit" font-size="18" font-weight="300" fill="#1E293B" letter-spacing="-0.3">Energy</text>
+                </svg>
+            </div>
+            
+            <div class="size-row dark">
+                <div class="size-label">Small (Dark)</div>
+                <svg width="200" height="32" viewBox="0 0 200 32">
+                    <path d="M5 26 L16 5 L27 26" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="3" y="28" width="26" height="3" rx="1" fill="#F97316"/>
+                    <text x="36" y="23" font-family="Outfit" font-size="18" font-weight="500" fill="white" letter-spacing="-0.3">Altara</text>
+                    <text x="86" y="23" font-family="Outfit" font-size="18" font-weight="300" fill="white" letter-spacing="-0.3">Energy</text>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Icon Only -->
+        <div class="icon-only">
+            <h2 class="section-label">Icon Only</h2>
+            
+            <div class="icon-grid">
+                <div class="icon-box">
+                    <div class="icon-container light" style="width: 80px; height: 80px;">
+                        <svg width="48" height="52" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="#0891B2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">80px</span>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-container dark" style="width: 80px; height: 80px;">
+                        <svg width="48" height="52" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">80px</span>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-container teal" style="width: 80px; height: 80px;">
+                        <svg width="48" height="52" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">80px</span>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-container light" style="width: 48px; height: 48px;">
+                        <svg width="28" height="32" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="#0891B2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">48px</span>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-container dark" style="width: 48px; height: 48px;">
+                        <svg width="28" height="32" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">48px</span>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-container light" style="width: 32px; height: 32px;">
+                        <svg width="18" height="20" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="#0891B2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">32px</span>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-container dark" style="width: 32px; height: 32px;">
+                        <svg width="18" height="20" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                    <span class="icon-size">32px</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Context Examples -->
+        <div class="context-section">
+            <h2 class="section-label">In Context</h2>
+            
+            <div class="context-grid">
+                <div class="context-card">
+                    <div class="context-label">App Icon</div>
+                    <div class="context-display gradient">
+                        <svg width="72" height="78" viewBox="0 0 56 60">
+                            <path d="M8 48 L28 8 L48 48" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="4" y="52" width="48" height="6" rx="2" fill="#F97316"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="context-card">
+                    <div class="context-label">Business Card</div>
+                    <div class="context-display" style="background: #E2E8F0;">
+                        <div class="biz-card">
+                            <svg width="140" height="28" viewBox="0 0 300 48">
+                                <path d="M8 38 L24 8 L40 38" fill="none" stroke="#0891B2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="5" y="42" width="38" height="5" rx="2" fill="#F97316"/>
+                                <text x="52" y="35" font-family="Outfit" font-size="28" font-weight="500" fill="#1E293B" letter-spacing="-0.5">Altara</text>
+                                <text x="128" y="35" font-family="Outfit" font-size="28" font-weight="300" fill="#1E293B" letter-spacing="-0.5">Energy</text>
+                            </svg>
+                            <div>
+                                <div class="biz-card-name">Zak Winnick</div>
+                                <div class="biz-card-title">Founder & CEO</div>
+                                <div class="biz-card-contact">zak@altaraenergy.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="context-card">
+                    <div class="context-label">Email Signature</div>
+                    <div class="context-display">
+                        <div style="text-align: left; font-size: 13px; line-height: 1.5;">
+                            <div style="font-weight: 500; color: #1E293B;">Zak Winnick</div>
+                            <div style="color: #64748B; font-size: 12px;">Founder & CEO</div>
+                            <div style="margin-top: 8px;">
+                                <svg width="120" height="24" viewBox="0 0 200 32">
+                                    <path d="M5 26 L16 5 L27 26" fill="none" stroke="#0891B2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="3" y="28" width="26" height="3" rx="1" fill="#F97316"/>
+                                    <text x="36" y="23" font-family="Outfit" font-size="18" font-weight="500" fill="#1E293B" letter-spacing="-0.3">Altara</text>
+                                    <text x="86" y="23" font-family="Outfit" font-size="18" font-weight="300" fill="#1E293B" letter-spacing="-0.3">Energy</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Header Example -->
+            <div style="margin-top: 24px;">
+                <div class="context-card">
+                    <div class="context-label">Website Header</div>
+                    <div class="context-display" style="background: #F8FAFC; padding: 24px;">
+                        <div class="website-header">
+                            <svg width="180" height="38" viewBox="0 0 300 48">
+                                <path d="M8 38 L24 8 L40 38" fill="none" stroke="#0891B2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="5" y="42" width="38" height="5" rx="2" fill="#F97316"/>
+                                <text x="52" y="35" font-family="Outfit" font-size="28" font-weight="500" fill="#1E293B" letter-spacing="-0.5">Altara</text>
+                                <text x="128" y="35" font-family="Outfit" font-size="28" font-weight="300" fill="#1E293B" letter-spacing="-0.5">Energy</text>
+                            </svg>
+                            <div class="nav-links">
+                                <span class="nav-link">About</span>
+                                <span class="nav-link">Solutions</span>
+                                <span class="nav-link">Partners</span>
+                                <span class="nav-cta">Contact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dark Header -->
+            <div style="margin-top: 16px;">
+                <div class="context-card">
+                    <div class="context-label">Dark Website Header</div>
+                    <div class="context-display dark" style="padding: 24px;">
+                        <div class="website-header" style="background: #334155;">
+                            <svg width="180" height="38" viewBox="0 0 300 48">
+                                <path d="M8 38 L24 8 L40 38" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="5" y="42" width="38" height="5" rx="2" fill="#F97316"/>
+                                <text x="52" y="35" font-family="Outfit" font-size="28" font-weight="500" fill="white" letter-spacing="-0.5">Altara</text>
+                                <text x="128" y="35" font-family="Outfit" font-size="28" font-weight="300" fill="white" letter-spacing="-0.5">Energy</text>
+                            </svg>
+                            <div class="nav-links" style="color: #94A3B8;">
+                                <span class="nav-link">About</span>
+                                <span class="nav-link">Solutions</span>
+                                <span class="nav-link">Partners</span>
+                                <span class="nav-cta">Contact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

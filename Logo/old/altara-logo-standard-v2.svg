@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="orbitalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="50%" stop-color="#0891B2"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Orbital ring with gradient -->
+  <circle 
+    cx="120" 
+    cy="120" 
+    r="85" 
+    fill="none" 
+    stroke="url(#orbitalGradient)" 
+    stroke-width="18" 
+    stroke-dasharray="360 84" 
+    transform="rotate(-90 120 120)"
+  />
+  
+  <!-- "A" symbol in Current Teal -->
+  <path 
+    d="M 80 160 L 120 65 L 160 160" 
+    fill="none" 
+    stroke="#0891B2" 
+    stroke-width="20" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+</svg>
