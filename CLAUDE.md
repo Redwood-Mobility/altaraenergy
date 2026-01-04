@@ -57,7 +57,7 @@ Root-level reference materials (not part of build):
 - **Typography**: Outfit font via Google Fonts
 - **Logo files**: Located in `images/` (altara-logo-standard.svg, altara-logo-white.svg, altara-logo-mono-teal.svg, plus icon variants)
 - **Language**: Use "city" not "urban" in copy. Avoid premium/luxury positioning.
-- **Social handles**: @altaraev (Twitter/X, Instagram, LinkedIn)
+- **Social handles**: @altaraenergy (Twitter/X, Instagram), altara-energy (LinkedIn)
 
 ## Content Guidelines
 
