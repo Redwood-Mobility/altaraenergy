@@ -623,31 +623,9 @@ section {
 }
 
 .hero-visual .hero-icon img {
-  width: 60%;
+  width: 85%;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba(0,0,0,0.3));
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-/* Orbital ring */
-.hero-visual .hero-icon::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 50%;
-  animation: spin 30s linear infinite;
-}
-
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 /* Floating stats */
@@ -660,7 +638,6 @@ section {
   border-radius: var(--radius-lg);
   padding: var(--space-md) var(--space-lg);
   color: var(--white);
-  animation: float 6s ease-in-out infinite;
 }
 
 @media (min-width: 1024px) {
@@ -672,13 +649,11 @@ section {
 .hero-stats.stat-1 {
   top: 10%;
   right: -10%;
-  animation-delay: -2s;
 }
 
 .hero-stats.stat-2 {
   bottom: 20%;
   left: -10%;
-  animation-delay: -4s;
 }
 
 .hero-stats .stat-value {
