@@ -370,6 +370,13 @@ section {
 
 .navbar-menu {
   display: none;
+  background-color: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar-menu {
+    background-color: #0F172A;
+  }
 }
 
 .navbar-nav {
@@ -464,6 +471,14 @@ section {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar-menu.active .navbar-nav {
+    background-color: #0F172A;
+  }
 }
 
 .navbar-menu.active .navbar-nav a {
