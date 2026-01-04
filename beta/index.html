@@ -285,13 +285,28 @@
       height: 32px;
     }
 
-    .logo-dark {
+    /* Default: show white logo over dark hero */
+    .logo-light {
       display: none;
     }
 
+    .logo-dark {
+      display: block;
+    }
+
+    /* When scrolled: show standard logo on light background */
+    .header.scrolled .logo-light {
+      display: block;
+    }
+
+    .header.scrolled .logo-dark {
+      display: none;
+    }
+
+    /* Dark mode: always show white logo */
     @media (prefers-color-scheme: dark) {
-      .logo-light { display: none; }
-      .logo-dark { display: block; }
+      .logo-light { display: none !important; }
+      .logo-dark { display: block !important; }
     }
 
     .nav {
@@ -303,11 +318,19 @@
     .nav-link {
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: rgba(255, 255, 255, 0.8);
       transition: color 0.2s;
     }
 
     .nav-link:hover {
+      color: var(--white);
+    }
+
+    .header.scrolled .nav-link {
+      color: var(--text-secondary);
+    }
+
+    .header.scrolled .nav-link:hover {
       color: var(--text-primary);
     }
 
@@ -335,6 +358,10 @@
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
+      color: var(--white);
+    }
+
+    .header.scrolled .mobile-toggle {
       color: var(--text-primary);
     }
 
@@ -1457,7 +1484,6 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 Altara Energy LLC. All rights reserved.</p>
-        <p class="mono label">Charging the future, one city at a time.</p>
       </div>
     </div>
   </footer>
