@@ -540,10 +540,18 @@ section {
   align-items: center;
 }
 
+.hero-visual {
+  order: -1;
+}
+
 @media (min-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-3xl);
+  }
+
+  .hero-visual {
+    order: 0;
   }
 }
 
