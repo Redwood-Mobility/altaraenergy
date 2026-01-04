@@ -334,15 +334,13 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(20px);
+  background: #FFFFFF;
   border-bottom: 1px solid var(--border);
-  transition: all var(--duration-normal) var(--ease-out);
 }
 
 @media (prefers-color-scheme: dark) {
   .site-header {
-    background: rgba(15,23,42,0.85);
+    background: #0F172A;
   }
 }
 
@@ -448,14 +446,14 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--white);
+  background: #FFFFFF;
   padding: calc(72px + var(--space-xl)) var(--space-lg) var(--space-lg);
   z-index: 999;
 }
 
 @media (prefers-color-scheme: dark) {
   .navbar-menu.active {
-    background: var(--gray-900);
+    background: #0F172A;
   }
 }
 
