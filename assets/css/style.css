@@ -893,7 +893,7 @@ img {
   .feature-layout-fleet {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
   }
 
   .feature-layout-fleet .feature-header {
