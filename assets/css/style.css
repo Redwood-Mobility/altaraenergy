@@ -493,7 +493,13 @@ section {
   align-items: center;
   background: var(--gradient-hero);
   overflow: hidden;
-  padding-top: 72px;
+  padding-top: 120px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 72px;
+  }
 }
 
 .hero::before {
