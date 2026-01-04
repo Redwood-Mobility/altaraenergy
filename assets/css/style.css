@@ -644,18 +644,6 @@ section {
   animation: spin 30s linear infinite;
 }
 
-.hero-visual .hero-icon::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: var(--orange);
-  border-radius: 50%;
-  top: 10%;
-  left: 50%;
-  box-shadow: 0 0 20px var(--orange);
-  animation: spin 30s linear infinite;
-}
 
 @keyframes spin {
   from { transform: rotate(0deg); }
