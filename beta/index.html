@@ -351,7 +351,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(145deg, var(--teal-dark) 0%, var(--gray-900) 40%, var(--gray-950) 100%);
+      background: linear-gradient(160deg, var(--teal-dark) 0%, var(--gray-950) 50%);
       color: var(--text-on-dark);
       position: relative;
       overflow: hidden;
@@ -361,11 +361,8 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(135deg, transparent 0%, rgba(249, 115, 22, 0.12) 60%, rgba(249, 115, 22, 0.06) 100%);
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(249, 115, 22, 0.1) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -1208,21 +1205,18 @@
     <div class="container">
       <div class="value-grid stagger-container">
         <div class="value-card reveal">
-          <div class="value-number">01</div>
           <div class="value-icon"><i class="fas fa-hammer"></i></div>
           <h3 class="heading">We Build</h3>
           <p>Full site development, permitting, and construction. We handle the complexity.</p>
         </div>
 
         <div class="value-card reveal">
-          <div class="value-number">02</div>
           <div class="value-icon"><i class="fas fa-key"></i></div>
           <h3 class="heading">We Own</h3>
           <p>We invest in and own all charging infrastructure. No capital outlay for you.</p>
         </div>
 
         <div class="value-card reveal">
-          <div class="value-number">03</div>
           <div class="value-icon"><i class="fas fa-cog"></i></div>
           <h3 class="heading">We Operate</h3>
           <p>24/7 monitoring, proactive maintenance, and customer support from day one.</p>
@@ -1235,7 +1229,6 @@
        SITE HOSTS SECTION
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="section section-alt" id="hosts">
-    <div class="section-number number-xl">02</div>
     <div class="container">
       <div class="grid-asymmetric">
         <div class="reveal">
@@ -1283,7 +1276,6 @@
        FLEET SECTION - DARK
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="section section-dark" id="fleet">
-    <div class="section-number number-xl">03</div>
     <div class="container">
       <div class="grid-asymmetric reverse">
         <div class="feature-visual reveal">
