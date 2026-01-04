@@ -48,5 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
       hamburger.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Header scroll effect
+  const header = document.querySelector('.site-header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 100) {
+      header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+    } else {
+      header.style.boxShadow = '';
+    }
+
+    lastScroll = currentScroll;
+  });
 });
 </script>
