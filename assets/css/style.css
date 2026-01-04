@@ -333,14 +333,14 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background: #FFFFFF;
+  z-index: 10000;
+  background-color: #FFFFFF !important;
   border-bottom: 1px solid var(--border);
 }
 
 @media (prefers-color-scheme: dark) {
   .site-header {
-    background: #0F172A;
+    background-color: #0F172A !important;
   }
 }
 
@@ -439,21 +439,24 @@ section {
 
 /* Mobile Menu */
 .navbar-menu.active {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #FFFFFF;
-  padding: calc(72px + var(--space-xl)) var(--space-lg) var(--space-lg);
-  z-index: 999;
+  background-color: #FFFFFF !important;
+  padding-top: 100px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  z-index: 9999;
 }
 
 @media (prefers-color-scheme: dark) {
   .navbar-menu.active {
-    background: #0F172A;
+    background-color: #0F172A !important;
   }
 }
 
