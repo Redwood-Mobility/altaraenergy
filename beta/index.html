@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altara Energy | City EV Charging Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-deep: #030712;
+      --bg-surface: #0a1120;
+      --bg-elevated: #111827;
+      --teal-primary: #0891B2;
+      --teal-deep: #0E7490;
+      --teal-glow: #22d3ee;
+      --ember: #F97316;
+      --ember-bright: #fb923c;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --gradient-teal: linear-gradient(135deg, #0891B2 0%, #0E7490 100%);
+      --gradient-ember: linear-gradient(135deg, #F97316 0%, #ea580c 100%);
+      --gradient-dark: linear-gradient(180deg, #030712 0%, #0a1120 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-deep);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--teal-deep);
+      border-radius: 4px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(8, 145, 178, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 0.75rem 2rem;
+      background: rgba(3, 7, 18, 0.95);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-teal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-teal);
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(8, 145, 178, 0.3);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(8, 145, 178, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 8rem 2rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
+        var(--bg-deep);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(8, 145, 178, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8, 145, 178, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black, transparent);
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(8, 145, 178, 0.1);
+      border: 1px solid rgba(8, 145, 178, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--teal-glow);
+      margin-bottom: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--teal-glow);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--teal-glow) 0%, var(--teal-primary) 50%, var(--ember) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--gradient-teal);
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 30px rgba(8, 145, 178, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(8, 145, 178, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal-primary);
+      background: rgba(8, 145, 178, 0.1);
+    }
+
+    .hero-visual {
+      position: relative;
+      opacity: 0;
+      transform: translateX(40px);
+      animation: fadeInRight 1s ease 0.3s forwards;
+    }
+
+    .hero-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(8, 145, 178, 0.2);
+      border-radius: 24px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-teal);
+    }
+
+    .charger-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 0;
+    }
+
+    .charger-icon {
+      width: 120px;
+      height: 180px;
+      background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+      border-radius: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1.5rem;
+      border: 2px solid rgba(8, 145, 178, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .charger-screen {
+      width: 70px;
+      height: 50px;
+      background: var(--bg-deep);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(8, 145, 178, 0.5);
+    }
+
+    .charger-screen i {
+      font-size: 1.5rem;
+      color: var(--teal-glow);
+      animation: pulse 2s infinite;
+    }
+
+    .charger-port {
+      width: 40px;
+      height: 25px;
+      background: var(--bg-deep);
+      border-radius: 6px;
+      border: 2px solid var(--teal-primary);
+    }
+
+    .charger-cable {
+      width: 4px;
+      height: 60px;
+      background: linear-gradient(180deg, var(--teal-primary) 0%, var(--ember) 100%);
+      margin-top: 0.5rem;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .charger-cable::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 30px;
+      background: var(--bg-elevated);
+      border-radius: 6px;
+      border: 2px solid var(--ember);
+    }
+
+    .charger-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .charger-stat {
+      padding: 1rem;
+      background: rgba(8, 145, 178, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(8, 145, 178, 0.1);
+    }
+
+    .charger-stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--teal-glow);
+    }
+
+    .charger-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    /* Stats Section */
+    .stats {
+      padding: 4rem 2rem;
+      background: var(--bg-surface);
+      border-top: 1px solid rgba(8, 145, 178, 0.1);
+      border-bottom: 1px solid rgba(8, 145, 178, 0.1);
+    }
+
+    .stats-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .stat-item.visible {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      background: var(--gradient-teal);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .stat-sublabel {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Solutions Section */
+    .solutions {
+      padding: 8rem 2rem;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--teal-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .solutions-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .solution-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(8, 145, 178, 0.15);
+      border-radius: 24px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .solution-card.visible {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .solution-card:hover {
+      border-color: rgba(8, 145, 178, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(8, 145, 178, 0.1);
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(8, 145, 178, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .solution-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--gradient-teal);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 30px rgba(8, 145, 178, 0.3);
+    }
+
+    .solution-card:nth-child(2) .solution-icon {
+      background: var(--gradient-ember);
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3);
+    }
+
+    .solution-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .solution-description {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .solution-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .solution-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .solution-features li i {
+      color: var(--teal-glow);
+      font-size: 0.75rem;
+    }
+
+    .solution-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--teal-glow);
+      text-decoration: none;
+      font-weight: 600;
+      transition: gap 0.3s ease;
+    }
+
+    .solution-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 8rem 2rem;
+      background: var(--bg-surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-it-works::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(8, 145, 178, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .steps-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+
+    .steps-container::before {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--teal-primary), var(--ember), transparent);
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .step.visible {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-deep);
+      border: 2px solid var(--teal-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teal-glow);
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .step:nth-child(even) .step-number {
+      border-color: var(--ember);
+      color: var(--ember-bright);
+    }
+
+    .step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Rewards Section */
+    .rewards {
+      padding: 8rem 2rem;
+      position: relative;
+    }
+
+    .rewards-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .rewards-content {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    .rewards-content.visible {
+      animation: fadeInLeft 0.6s ease forwards;
+    }
+
+    .rewards-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(249, 115, 22, 0.1);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--ember-bright);
+      margin-bottom: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .rewards-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .rewards-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .rewards-perks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .perk {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: rgba(249, 115, 22, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(249, 115, 22, 0.1);
+    }
+
+    .perk i {
+      color: var(--ember);
+      font-size: 1.25rem;
+      margin-top: 0.1rem;
+    }
+
+    .perk-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .rewards-visual {
+      position: relative;
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    .rewards-visual.visible {
+      animation: fadeInRight 0.6s ease forwards;
+    }
+
+    .rewards-card {
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+      border: 1px solid rgba(249, 115, 22, 0.2);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rewards-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-ember);
+    }
+
+    .tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .tier {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: rgba(3, 7, 18, 0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .tier:hover {
+      border-color: rgba(249, 115, 22, 0.3);
+      transform: translateX(8px);
+    }
+
+    .tier-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .tier-explorer .tier-icon { background: linear-gradient(135deg, #94a3b8, #64748b); }
+    .tier-voyager .tier-icon { background: linear-gradient(135deg, #0891B2, #0E7490); }
+    .tier-pioneer .tier-icon { background: linear-gradient(135deg, #F97316, #ea580c); }
+    .tier-trailblazer .tier-icon { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
+
+    .tier-info {
+      flex: 1;
+    }
+
+    .tier-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tier-benefit {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .tier-discount {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ember-bright);
+    }
+
+    /* Locations Section */
+    .locations {
+      padding: 8rem 2rem;
+      background: var(--bg-surface);
+    }
+
+    .locations-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .location-card {
+      background: var(--bg-deep);
+      border: 1px solid rgba(8, 145, 178, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .location-card.visible {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .location-card:hover {
+      border-color: rgba(8, 145, 178, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(8, 145, 178, 0.15);
+    }
+
+    .location-image {
+      height: 180px;
+      background: linear-gradient(135deg, var(--bg-elevated), var(--bg-surface));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 70%, rgba(8, 145, 178, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+    }
+
+    .location-image i {
+      font-size: 3rem;
+      color: var(--teal-primary);
+      position: relative;
+      z-index: 1;
+    }
+
+    .location-content {
+      padding: 1.5rem;
+    }
+
+    .location-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--teal-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-description {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .location-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .location-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .location-meta i {
+      color: var(--teal-primary);
+      font-size: 0.9rem;
+    }
+
+    /* CTA Section */
+    .cta {
+      padding: 8rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(8, 145, 178, 0.15) 0%, transparent 60%),
+        var(--bg-deep);
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .cta-description {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 2rem 2rem;
+      background: var(--bg-surface);
+      border-top: 1px solid rgba(8, 145, 178, 0.1);
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      margin-bottom: 1rem;
+    }
+
+    .footer-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: var(--bg-elevated);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      border-color: var(--teal-primary);
+      color: var(--teal-glow);
+      transform: translateY(-3px);
+    }
+
+    .footer-column h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-column a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--teal-glow);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copyright {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-legal a:hover {
+      color: var(--text-secondary);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-description {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+
+      .steps-container::before {
+        display: none;
+      }
+
+      .rewards-container {
+        grid-template-columns: 1fr;
+      }
+
+      .locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .stat-item {
+        padding: 1.5rem;
+      }
+
+      .steps-container {
+        grid-template-columns: 1fr;
+      }
+
+      .rewards-perks {
+        grid-template-columns: 1fr;
+      }
+
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-brand {
+        max-width: 100%;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-legal {
+        justify-content: center;
+      }
+    }
+
+    /* Utility classes for scroll animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">A</span>
+      Altara Energy
+    </a>
+    <ul class="nav-links">
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#rewards">Rewards</a></li>
+      <li><a href="#locations">Locations</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get Started</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">Now Expanding Nationwide</span>
+        <h1>Powering <span class="gradient-text">City Mobility</span></h1>
+        <p class="hero-description">
+          Fast, reliable EV charging where you need it most. Altara Energy brings convenient charging infrastructure to city neighborhoods, making electric driving effortless.
+        </p>
+        <div class="hero-cta">
+          <a href="#solutions" class="btn-primary">
+            Find a Charger <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            Host a Station <i class="fas fa-bolt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="charger-display">
+            <div class="charger-icon">
+              <div class="charger-screen">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="charger-port"></div>
+            </div>
+            <div class="charger-cable"></div>
+          </div>
+          <div class="charger-stats">
+            <div class="charger-stat">
+              <div class="charger-stat-value">150kW</div>
+              <div class="charger-stat-label">Max Speed</div>
+            </div>
+            <div class="charger-stat">
+              <div class="charger-stat-value">24/7</div>
+              <div class="charger-stat-label">Available</div>
+            </div>
+            <div class="charger-stat">
+              <div class="charger-stat-value">$0.35</div>
+              <div class="charger-stat-label">Per kWh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-item" data-delay="0">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Charging Ports</div>
+        <div class="stat-sublabel">Across the network</div>
+      </div>
+      <div class="stat-item" data-delay="100">
+        <div class="stat-number">25</div>
+        <div class="stat-label">Cities</div>
+        <div class="stat-sublabel">And growing</div>
+      </div>
+      <div class="stat-item" data-delay="200">
+        <div class="stat-number">99.5%</div>
+        <div class="stat-label">Uptime</div>
+        <div class="stat-sublabel">Network reliability</div>
+      </div>
+      <div class="stat-item" data-delay="300">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Sessions</div>
+        <div class="stat-sublabel">Monthly charging</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions" id="solutions">
+    <div class="section-header">
+      <div class="section-label">Solutions</div>
+      <h2 class="section-title">Charging Infrastructure That Works for You</h2>
+      <p class="section-description">
+        Whether you're a property owner or fleet operator, we have solutions designed for your specific needs.
+      </p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-card" data-delay="0">
+        <div class="solution-icon">
+          <i class="fas fa-store"></i>
+        </div>
+        <h3 class="solution-title">Site Hosts</h3>
+        <p class="solution-description">
+          Transform your property into a destination for EV drivers. We handle installation, maintenance, and operations—you earn revenue.
+        </p>
+        <ul class="solution-features">
+          <li><i class="fas fa-check"></i> Zero upfront costs</li>
+          <li><i class="fas fa-check"></i> Revenue sharing model</li>
+          <li><i class="fas fa-check"></i> Increased foot traffic</li>
+          <li><i class="fas fa-check"></i> Full maintenance included</li>
+        </ul>
+        <a href="#" class="solution-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="solution-card" data-delay="150">
+        <div class="solution-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h3 class="solution-title">Fleet Operators</h3>
+        <p class="solution-description">
+          Electrify your fleet with dedicated charging infrastructure. Custom solutions for delivery, rideshare, and commercial vehicles.
+        </p>
+        <ul class="solution-features">
+          <li><i class="fas fa-check"></i> Priority charging access</li>
+          <li><i class="fas fa-check"></i> Fleet management dashboard</li>
+          <li><i class="fas fa-check"></i> Volume pricing available</li>
+          <li><i class="fas fa-check"></i> 24/7 support</li>
+        </ul>
+        <a href="#" class="solution-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-header">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">Simple, Fast, Reliable</h2>
+      <p class="section-description">
+        Charging your EV has never been easier. Here's how Altara works.
+      </p>
+    </div>
+    <div class="steps-container">
+      <div class="step" data-delay="0">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Find a Station</h3>
+        <p class="step-description">Use our app to locate the nearest available charger in seconds.</p>
+      </div>
+      <div class="step" data-delay="100">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Plug In</h3>
+        <p class="step-description">Simply connect your vehicle and start charging instantly.</p>
+      </div>
+      <div class="step" data-delay="200">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Grab a Coffee</h3>
+        <p class="step-description">Enjoy nearby shops and restaurants while your car charges.</p>
+      </div>
+      <div class="step" data-delay="300">
+        <div class="step-number">04</div>
+        <h3 class="step-title">Drive Away</h3>
+        <p class="step-description">Pay through the app and get back on the road, fully charged.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rewards Section -->
+  <section class="rewards" id="rewards">
+    <div class="rewards-container">
+      <div class="rewards-content">
+        <span class="rewards-badge"><i class="fas fa-star"></i> Loyalty Program</span>
+        <h2 class="rewards-title">Pathfinder Rewards</h2>
+        <p class="rewards-description">
+          Join our rewards program and save on every charge. Earn points across the entire Pathfinder network and unlock exclusive benefits.
+        </p>
+        <div class="rewards-perks">
+          <div class="perk">
+            <i class="fas fa-percentage"></i>
+            <span class="perk-text">Up to 20% off charging</span>
+          </div>
+          <div class="perk">
+            <i class="fas fa-gift"></i>
+            <span class="perk-text">Partner discounts</span>
+          </div>
+          <div class="perk">
+            <i class="fas fa-crown"></i>
+            <span class="perk-text">Priority support</span>
+          </div>
+          <div class="perk">
+            <i class="fas fa-network-wired"></i>
+            <span class="perk-text">Cross-network benefits</span>
+          </div>
+        </div>
+      </div>
+      <div class="rewards-visual">
+        <div class="rewards-card">
+          <div class="tiers">
+            <div class="tier tier-explorer">
+              <div class="tier-icon"><i class="fas fa-compass"></i></div>
+              <div class="tier-info">
+                <div class="tier-name">Explorer</div>
+                <div class="tier-benefit">0 - 500 points</div>
+              </div>
+              <div class="tier-discount">5% off</div>
+            </div>
+            <div class="tier tier-voyager">
+              <div class="tier-icon"><i class="fas fa-map"></i></div>
+              <div class="tier-info">
+                <div class="tier-name">Voyager</div>
+                <div class="tier-benefit">500 - 2,000 points</div>
+              </div>
+              <div class="tier-discount">10% off</div>
+            </div>
+            <div class="tier tier-pioneer">
+              <div class="tier-icon"><i class="fas fa-mountain"></i></div>
+              <div class="tier-info">
+                <div class="tier-name">Pioneer</div>
+                <div class="tier-benefit">2,000 - 5,000 points</div>
+              </div>
+              <div class="tier-discount">15% off</div>
+            </div>
+            <div class="tier tier-trailblazer">
+              <div class="tier-icon"><i class="fas fa-flag"></i></div>
+              <div class="tier-info">
+                <div class="tier-name">Trailblazer</div>
+                <div class="tier-benefit">5,000+ points</div>
+              </div>
+              <div class="tier-discount">20% off</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section class="locations" id="locations">
+    <div class="section-header">
+      <div class="section-label">Network</div>
+      <h2 class="section-title">Where You'll Find Us</h2>
+      <p class="section-description">
+        From convenience stores to shopping centers, we're bringing EV charging to locations that fit your lifestyle.
+      </p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card" data-delay="0">
+        <div class="location-image">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="location-content">
+          <div class="location-type">Retail</div>
+          <h3 class="location-name">Grocery & Retail</h3>
+          <p class="location-description">Charge while you shop at partner grocery stores and retail locations.</p>
+          <div class="location-meta">
+            <span><i class="fas fa-bolt"></i> 150kW</span>
+            <span><i class="fas fa-charging-station"></i> 4-8 ports</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card" data-delay="100">
+        <div class="location-image">
+          <i class="fas fa-coffee"></i>
+        </div>
+        <div class="location-content">
+          <div class="location-type">Convenience</div>
+          <h3 class="location-name">C-Stores & Cafes</h3>
+          <p class="location-description">Quick stops with fast charging at neighborhood convenience stores.</p>
+          <div class="location-meta">
+            <span><i class="fas fa-bolt"></i> 150kW</span>
+            <span><i class="fas fa-charging-station"></i> 2-4 ports</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card" data-delay="200">
+        <div class="location-image">
+          <i class="fas fa-utensils"></i>
+        </div>
+        <div class="location-content">
+          <div class="location-type">Dining</div>
+          <h3 class="location-name">Restaurants</h3>
+          <p class="location-description">Top off your battery while enjoying a meal at partner restaurants.</p>
+          <div class="location-meta">
+            <span><i class="fas fa-bolt"></i> 50-150kW</span>
+            <span><i class="fas fa-charging-station"></i> 4-6 ports</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card" data-delay="300">
+        <div class="location-image">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="location-content">
+          <div class="location-type">Commercial</div>
+          <h3 class="location-name">Office Parks</h3>
+          <p class="location-description">Workplace charging for employees and visitors at business centers.</p>
+          <div class="location-meta">
+            <span><i class="fas fa-bolt"></i> 50-150kW</span>
+            <span><i class="fas fa-charging-station"></i> 6-10 ports</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card" data-delay="400">
+        <div class="location-image">
+          <i class="fas fa-hotel"></i>
+        </div>
+        <div class="location-content">
+          <div class="location-type">Hospitality</div>
+          <h3 class="location-name">Hotels & Lodging</h3>
+          <p class="location-description">Overnight charging at hotels, motels, and extended stay properties.</p>
+          <div class="location-meta">
+            <span><i class="fas fa-bolt"></i> 50kW</span>
+            <span><i class="fas fa-charging-station"></i> 4-8 ports</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card" data-delay="500">
+        <div class="location-image">
+          <i class="fas fa-parking"></i>
+        </div>
+        <div class="location-content">
+          <div class="location-type">Parking</div>
+          <h3 class="location-name">Public Garages</h3>
+          <p class="location-description">Charging while parked at city garages and parking facilities.</p>
+          <div class="location-meta">
+            <span><i class="fas fa-bolt"></i> 50-150kW</span>
+            <span><i class="fas fa-charging-station"></i> 8-12 ports</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="contact">
+    <div class="cta-bg"></div>
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to <span class="gradient-text">Join the Network</span>?</h2>
+      <p class="cta-description">
+        Whether you're an EV driver looking for reliable charging or a property owner interested in hosting, we're here to help.
+      </p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary">
+          Download the App <i class="fas fa-mobile-alt"></i>
+        </a>
+        <a href="#" class="btn-secondary">
+          Become a Host <i class="fas fa-handshake"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <span class="logo-icon">A</span>
+            Altara Energy
+          </a>
+          <p class="footer-description">
+            Making EV charging accessible, convenient, and reliable for city drivers everywhere. Part of the Pathfinder Rewards network.
+          </p>
+          <div class="social-links">
+            <a href="https://twitter.com/altaraenergy" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/altaraenergy" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/altara-energy" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">Site Hosts</a></li>
+            <li><a href="#">Fleet Operators</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Enterprise</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Find a Charger</a></li>
+            <li><a href="#">Pathfinder Rewards</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 Altara Energy. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.stat-item, .solution-card, .step, .location-card, .rewards-content, .rewards-visual').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter animation for stats
+    const animateCounter = (element, target, suffix = '') => {
+      let current = 0;
+      const increment = target / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + suffix;
+      }, 30);
+    };
+
+    // Trigger counter animation when stats section is visible
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumbers = entry.target.querySelectorAll('.stat-number');
+          statNumbers.forEach(stat => {
+            const text = stat.textContent;
+            if (text.includes('+')) {
+              const num = parseInt(text);
+              stat.textContent = '0+';
+              animateCounter(stat, num, '+');
+            } else if (text.includes('%')) {
+              const num = parseFloat(text);
+              stat.textContent = '0%';
+              setTimeout(() => {
+                stat.textContent = text;
+              }, 1500);
+            } else if (text.includes('K')) {
+              const num = parseInt(text);
+              stat.textContent = '0K+';
+              animateCounter(stat, num, 'K+');
+            }
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
