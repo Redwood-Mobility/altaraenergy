@@ -4,9 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Altara Energy website - a Jekyll-based static site for a city convenience EV charging network. Hosted on GitHub Pages at altaraenergy.com.
+Altara Energy website - a Jekyll-based static site for an EV charging network. Hosted on GitHub Pages at altaraenergy.com.
 
-**Brand positioning**: Standalone city charging brand, part of Pathfinder Rewards loyalty network. Operated by Rangeway (not prominently customer-facing). Focus on convenience, not premium/luxury.
+**Brand positioning**: Standalone EV charging brand, part of Pathfinder Rewards loyalty network. Operated by Rangeway (not prominently customer-facing). Focus on convenience, not premium/luxury.
+
+**IMPORTANT**: Do NOT use "city EV charging" or "city charging" as a descriptor. Altara is simply an EV charging network - no geographic qualifier needed.
 
 ## Build & Development Commands
 
@@ -56,12 +58,12 @@ Root-level reference materials (not part of build):
 - **Colors**: Current Teal (#0891B2), Ember Orange (#F97316), Deep Teal (#0E7490)
 - **Typography**: Outfit font via Google Fonts
 - **Logo files**: Located in `images/` (altara-logo-standard.svg, altara-logo-white.svg, altara-logo-mono-teal.svg, plus icon variants)
-- **Language**: Use "city" not "urban" in copy. Avoid premium/luxury positioning.
+- **Language**: NEVER use "city EV charging" or "city charging". Avoid premium/luxury positioning.
 - **Social handles**: @altaraenergy (Twitter/X, Instagram), altara-energy (LinkedIn)
 
 ## Content Guidelines
 
-- Use specific city names rather than "urban areas"
+- **NEVER use "city EV charging" or "city charging"** - Altara is simply an EV charging network
 - Focus on convenience, efficiency, accessibility
 - Pathfinder Rewards is the loyalty program (multi-network)
 - Avoid premium/luxury/adventure language
